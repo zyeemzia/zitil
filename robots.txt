@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://zitil.zyeemzia.com/sitemap.xml
