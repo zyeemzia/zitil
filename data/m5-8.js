@@ -132,6 +132,110 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "topology",
+     "title": "Product, platform and enabling teams around one service",
+     "nodes": [
+      {
+       "id": "p1",
+       "kind": "team",
+       "label": "Payments team",
+       "sub": "Product team: build and run",
+       "x": 1,
+       "y": 2
+      },
+      {
+       "id": "p2",
+       "kind": "team",
+       "label": "Onboarding team",
+       "sub": "Product team",
+       "x": 3,
+       "y": 2
+      },
+      {
+       "id": "p3",
+       "kind": "team",
+       "label": "Merchant team",
+       "sub": "Product team",
+       "x": 5,
+       "y": 2
+      },
+      {
+       "id": "en",
+       "kind": "team",
+       "label": "Enabling team",
+       "sub": "SRE and security coaching",
+       "x": 7,
+       "y": 2
+      },
+      {
+       "id": "plat",
+       "kind": "process",
+       "label": "Platform team",
+       "sub": "Self-service paved roads",
+       "x": 3,
+       "y": 4
+      },
+      {
+       "id": "cloud",
+       "kind": "cloud",
+       "label": "Cloud platform",
+       "x": 3,
+       "y": 6
+      },
+      {
+       "id": "desk",
+       "kind": "team",
+       "label": "Service desk",
+       "sub": "First contact",
+       "x": 0,
+       "y": 4
+      },
+      {
+       "id": "users",
+       "kind": "user",
+       "label": "Users",
+       "x": 0,
+       "y": 6
+      }
+     ],
+     "links": [
+      {
+       "a": "plat",
+       "b": "p1"
+      },
+      {
+       "a": "plat",
+       "b": "p2",
+       "label": "pipelines"
+      },
+      {
+       "a": "plat",
+       "b": "p3"
+      },
+      {
+       "a": "en",
+       "b": "p3",
+       "label": "coaching",
+       "style": "dashed"
+      },
+      {
+       "a": "plat",
+       "b": "cloud",
+       "label": "provisions"
+      },
+      {
+       "a": "users",
+       "b": "desk"
+      },
+      {
+       "a": "desk",
+       "b": "p1",
+       "label": "escalation"
+      }
+     ],
+     "caption": "Product teams own their services end to end; the platform team removes repeated infrastructure work through self-service. The enabling team builds skills and then steps back, while the desk keeps first contact."
+    },
+    {
      "type": "callout",
      "kind": "insight",
      "text": "Teams that support what they build fix the causes of operational pain quickly, because they feel it. But full end-to-end ownership can overload small teams. A balanced model gives product teams on-call ownership for their services, with platform teams providing paved roads (standard pipelines, monitoring, security) and a service desk handling first contact.",
@@ -162,6 +266,48 @@ TRACK.modules.push({
        "text": "Incident rates, open defects and knowledge completeness that end early-life support."
       }
      ]
+    },
+    {
+     "type": "timeline",
+     "title": "A transition plan with early-life support",
+     "items": [
+      {
+       "when": "Week −8",
+       "label": "Readiness criteria agreed",
+       "text": "Operational, support, security and business criteria signed off by all parties."
+      },
+      {
+       "when": "Week −6",
+       "label": "Run-ready assets",
+       "text": "Runbooks, alerts, dashboards and knowledge articles built with operators."
+      },
+      {
+       "when": "Week −3",
+       "label": "Rehearsals",
+       "text": "Support rehearsal plus backup, restore and failover tests."
+      },
+      {
+       "when": "Week −1",
+       "label": "Go/no-go",
+       "text": "Decision against the readiness criteria, not the calendar."
+      },
+      {
+       "when": "Go-live",
+       "label": "Elevated monitoring",
+       "text": "Builders and operators on call together."
+      },
+      {
+       "when": "Weeks +1 to +6",
+       "label": "Early-life support",
+       "text": "Daily defect review; knowledge gaps closed fast."
+      },
+      {
+       "when": "Exit",
+       "label": "Steady state",
+       "text": "Exit criteria met, such as incident rate and SLO stable for four weeks."
+      }
+     ],
+     "caption": "Timings are illustrative; the order is what matters. Operability work starts weeks before go-live, and ownership hands over on evidence, not on a date."
     },
     {
      "type": "scenario",
@@ -240,6 +386,17 @@ TRACK.modules.push({
     {
      "type": "reflection",
      "prompt": "Think of the last service your organisation launched. Who was on call in its first month, and did they help design it?"
+    },
+    {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "Ask how a service will be run, supported and changed at the first design workshop.",
+      "Design for operability, supportability, changeability, security and sustainability, not only features.",
+      "Product teams that build and run, supported by platform and enabling teams, reduce handovers.",
+      "Hand over with a complete design package and a rehearsed support model.",
+      "Early-life support ends on agreed exit criteria, not on a calendar date."
+     ]
     },
     {
      "type": "quiz",
@@ -355,6 +512,34 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "chart",
+     "kind": "line",
+     "title": "Why the 100% utilisation target backfires",
+     "labels": [
+      "50%",
+      "60%",
+      "70%",
+      "80%",
+      "90%",
+      "95%"
+     ],
+     "series": [
+      {
+       "name": "Relative waiting time",
+       "values": [
+        1,
+        1.5,
+        2.33,
+        4,
+        9,
+        19
+       ]
+      }
+     ],
+     "yLabel": "Waiting time (×, relative to 50% load)",
+     "caption": "Calculated from the simple queueing relationship above: waiting at 95% load is about 19 times the waiting at 50%. Real teams differ in detail, but the sharp upward bend near full load is always there."
+    },
+    {
      "type": "callout",
      "kind": "warning",
      "text": "Managers often try to keep every engineer 100% busy. Queue theory shows that this makes lead times explode and leaves no capacity for incidents or improvement. High-performing teams deliberately plan at 70–80% of capacity, leaving slack that absorbs unplanned work.",
@@ -385,6 +570,43 @@ TRACK.modules.push({
        "text": "Reserve fixed shares of capacity for each work type, for example 60% features, 20% improvement, 20% unplanned."
       }
      ]
+    },
+    {
+     "type": "matrix",
+     "title": "Cost of delay against job size",
+     "x": "Job size (effort to finish)",
+     "y": "Cost of delay per week",
+     "quadrants": [
+      {
+       "title": "Do first",
+       "items": [
+        "Valuable and quick to finish",
+        "e.g. regulatory report due in 10 days"
+       ]
+      },
+      {
+       "title": "Split, then start",
+       "items": [
+        "Valuable but large",
+        "Deliver the most urgent slice first"
+       ]
+      },
+      {
+       "title": "Fill the gaps",
+       "items": [
+        "Small and low urgency",
+        "Pick up when capacity frees"
+       ]
+      },
+      {
+       "title": "Question or drop",
+       "items": [
+        "Large and low urgency",
+        "Often never worth starting"
+       ]
+      }
+     ],
+     "caption": "This is weighted shortest job first in picture form: the top-left has the highest cost of delay per unit of effort. Splitting large items moves their first slice towards the top-left."
     },
     {
      "type": "steps",
@@ -510,6 +732,17 @@ TRACK.modules.push({
      "prompt": "What share of your team's time last month was unplanned work? What single change would reduce it most?"
     },
     {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "Make all work visible: features, internal projects, changes and requests, and unplanned work.",
+      "Little's law: lead time = work in progress ÷ throughput, so limiting WIP shortens lead time.",
+      "Plan teams at 70–80% load; waiting explodes as utilisation approaches 100%.",
+      "Prioritise openly with cost of delay, WSJF, classes of service and capacity allocation.",
+      "Reduce unplanned work at its source through problem management, debt repayment and automation."
+     ]
+    },
+    {
      "type": "quiz",
      "items": [
       {
@@ -576,38 +809,40 @@ TRACK.modules.push({
      "text": "Customers do not experience your org chart. They experience a **journey**: a series of interactions with your organisation from the first time they hear of a service until long after they start using it. Each interaction is a **touchpoint**; some touchpoints matter far more than others. A master service manager designs and improves the whole journey, because value is won or lost in the gaps between departments."
     },
     {
-     "type": "flow",
+     "type": "cycle",
      "title": "Stages of a customer journey",
+     "center": "Customer journey",
      "items": [
       {
        "label": "Explore",
-       "text": "Understand markets, needs and potential customers; the customer discovers you"
+       "text": "Understand markets, needs and potential customers; the customer discovers you."
       },
       {
        "label": "Engage",
-       "text": "Build relationships and trust; understand needs in depth"
+       "text": "Build relationships and trust; understand needs in depth."
       },
       {
        "label": "Offer",
-       "text": "Shape demand and design offerings that fit"
+       "text": "Shape demand and design offerings that fit."
       },
       {
        "label": "Agree",
-       "text": "Agree value, terms, service levels and expectations"
+       "text": "Agree value, terms, service levels and expectations."
       },
       {
        "label": "Onboard",
-       "text": "Bring the customer and their users into the service"
+       "text": "Bring the customer and their users into the service."
       },
       {
        "label": "Co-create",
-       "text": "Use the service together, day to day"
+       "text": "Use the service together, day to day."
       },
       {
        "label": "Realise",
-       "text": "Confirm and grow the value achieved"
+       "text": "Confirm and grow the value achieved, which opens the next round of exploring."
       }
-     ]
+     ],
+     "caption": "The journey is a loop: realised value creates new needs and renewals. Moments of truth can sit at any stage, but onboarding and the first failures in co-creation are where many are lost."
     },
     {
      "type": "callout",
@@ -722,6 +957,45 @@ TRACK.modules.push({
      "title": "Fixing the journey, not the team"
     },
     {
+     "type": "chart",
+     "kind": "bar",
+     "title": "One outpatient visit, before and after journey redesign",
+     "labels": [
+      "Registration",
+      "Wait for doctor",
+      "Consultation",
+      "Lab queue",
+      "Lab test",
+      "Pharmacy"
+     ],
+     "series": [
+      {
+       "name": "Before (minutes)",
+       "values": [
+        15,
+        60,
+        15,
+        55,
+        25,
+        40
+       ]
+      },
+      {
+       "name": "After (minutes)",
+       "values": [
+        5,
+        35,
+        15,
+        20,
+        25,
+        20
+       ]
+      }
+     ],
+     "yLabel": "Minutes",
+     "caption": "An illustrative breakdown of the 3.5-hour and 2-hour visits in the example above. Consultation and testing did not change; nearly all the gain came from waits and repeated data entry between departments."
+    },
+    {
      "type": "scenario",
      "title": "Choosing the journey improvement",
      "situation": "A mobile financial services provider finds that 30% of new customers never complete a second transaction. Journey research shows the first cash-out at an agent often fails because agents lack float, and customers blame the app. What should the service manager prioritise?",
@@ -814,6 +1088,17 @@ TRACK.modules.push({
     {
      "type": "reflection",
      "prompt": "Which moment of truth in your service do you think customers judge you on most? What evidence would confirm or challenge your guess?"
+    },
+    {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "Customers experience journeys across departments, not the organisation chart.",
+      "Moments of truth deserve disproportionate design attention.",
+      "Front-stage pain is usually caused back stage: approvals, systems, suppliers and handovers.",
+      "Map journeys for a specific persona, using evidence rather than internal opinion.",
+      "Measure the end-to-end journey; department targets can all be green while customers wait."
+     ]
     },
     {
      "type": "quiz",
@@ -917,6 +1202,43 @@ TRACK.modules.push({
        "text": "IT co-creates business strategy and shares accountability for outcomes."
       }
      ]
+    },
+    {
+     "type": "matrix",
+     "title": "Mapping stakeholders: influence and interest",
+     "x": "Interest in the service",
+     "y": "Influence over decisions and funding",
+     "quadrants": [
+      {
+       "title": "Keep satisfied",
+       "items": [
+        "Finance director, regulator",
+        "Short, outcome-focused updates"
+       ]
+      },
+      {
+       "title": "Manage closely",
+       "items": [
+        "Clinical director, key customer",
+        "Regular reviews, shared roadmap"
+       ]
+      },
+      {
+       "title": "Monitor",
+       "items": [
+        "Occasional users",
+        "Light-touch, broadcast updates"
+       ]
+      },
+      {
+       "title": "Keep informed",
+       "items": [
+        "Ward nurses, desk users",
+        "Experience feedback, change notices"
+       ]
+      }
+     ],
+     "caption": "Relationship effort should follow position on this map, and positions move: a quiet sponsor becomes top-right the day a major incident hits the news."
     },
     {
      "type": "compare",
@@ -1088,6 +1410,17 @@ TRACK.modules.push({
      "prompt": "At what relationship maturity level does your main customer see your team? What would move you one level up?"
     },
     {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "Relationship management builds the trust needed to hear needs early and negotiate trade-offs.",
+      "Move from order taker to trusted adviser by understanding and proposing, not just delivering.",
+      "Look at experience through customer, user and employee lenses with different measures.",
+      "NPS = % promoters − % detractors; pair surveys with behavioural data to avoid response bias.",
+      "Business benefit owners, baselines and tracking turn value claims into evidence."
+     ]
+    },
+    {
      "type": "quiz",
      "items": [
       {
@@ -1161,7 +1494,7 @@ TRACK.modules.push({
    "objectives": [
     "Explain why high-velocity delivery matters in digital organisations",
     "Describe the outcomes high-velocity IT aims for and the trade-offs between them",
-    "Use the four key delivery metrics to assess delivery performance"
+    "Use the core software delivery metrics to assess delivery performance"
    ],
    "blocks": [
     {
@@ -1201,11 +1534,11 @@ TRACK.modules.push({
     },
     {
      "type": "table",
-     "title": "The four key delivery metrics",
+     "title": "Software delivery performance metrics",
      "head": [
       "Metric",
       "What it measures",
-      "Elite teams typically",
+      "Strong teams typically",
       "Struggling teams typically"
      ],
      "rows": [
@@ -1223,23 +1556,70 @@ TRACK.modules.push({
       ],
       [
        "Change failure rate",
-       "Share of deployments causing failure",
-       "Low single digits to ~15%",
+       "Share of deployments that need remediation",
+       "Low single digits to about 15%",
        "Much higher, often over 40%"
       ],
       [
-       "Time to restore service",
-       "Recovery time after a failure",
+       "Failed deployment recovery time",
+       "Time to recover from a deployment that failed",
        "Less than an hour",
        "A week or more"
+      ],
+      [
+       "Rework rate",
+       "Share of deployments that are unplanned fixes for user-facing problems",
+       "Low and stable",
+       "High; frequent emergency fixes"
       ]
      ]
+    },
+    {
+     "type": "text",
+     "text": "The best-known research programme on software delivery started with four key metrics. It has since refined **time to restore service** into **failed deployment recovery time** and added **rework rate**, and its recent reports also study platform engineering, developer experience and AI-assisted development. Performance bands shift from year to year, so treat them as a moving benchmark and compare yourself mainly with your own trend."
     },
     {
      "type": "callout",
      "kind": "insight",
      "text": "Year after year, large studies of software delivery find that the best teams are both faster **and** more stable. Small, frequent changes are easier to test, understand and roll back. Teams that deploy rarely tend to deploy large, risky batches and fail more often.",
      "title": "Speed and stability are not a trade-off"
+    },
+    {
+     "type": "matrix",
+     "title": "Throughput and stability together",
+     "x": "Throughput: deployment frequency and lead time",
+     "y": "Stability: low failure rate, fast recovery",
+     "quadrants": [
+      {
+       "title": "Stable but slow",
+       "items": [
+        "Monthly releases, heavy approvals",
+        "Risk builds up in large batches"
+       ]
+      },
+      {
+       "title": "High performers",
+       "items": [
+        "Small, frequent, automated changes",
+        "Fast recovery when things fail"
+       ]
+      },
+      {
+       "title": "Struggling",
+       "items": [
+        "Rare, large, risky releases",
+        "Long outages after deployments"
+       ]
+      },
+      {
+       "title": "Fast but fragile",
+       "items": [
+        "Frequent deployments, weak testing",
+        "Speed borrowed from reliability"
+       ]
+      }
+     ],
+     "caption": "Research keeps finding many teams in the top-right, which shows the two goals are not opposites. The usual route there is smaller batches and automation, not more approvals."
     },
     {
      "type": "compare",
@@ -1307,7 +1687,7 @@ TRACK.modules.push({
       },
       {
        "text": "Reduce batch size and automate testing and deployment so changes become smaller and safer",
-       "feedback": "Correct. Smaller, automated changes improve all four metrics together; moving to weekly releases of the same large batches would increase failures.",
+       "feedback": "Correct. Smaller, automated changes improve all the delivery metrics together; moving to weekly releases of the same large batches would increase failures.",
        "best": true
       }
      ]
@@ -1315,13 +1695,13 @@ TRACK.modules.push({
     {
      "type": "template",
      "title": "Delivery performance baseline",
-     "purpose": "Record the four key metrics for one service and set improvement targets.",
+     "purpose": "Record the core delivery metrics for one service and set improvement targets.",
      "columns": [
       "Service",
       "Deployment frequency",
       "Lead time for changes",
       "Change failure rate",
-      "Time to restore",
+      "Recovery time",
       "Target in 6 months"
      ],
      "example": [
@@ -1352,8 +1732,8 @@ TRACK.modules.push({
        "def": "Time from code being committed to it running successfully in production."
       },
       {
-       "term": "Time to restore service",
-       "def": "How long it takes to recover from a failure in production."
+       "term": "Failed deployment recovery time",
+       "def": "How long it takes to recover when a deployment to production fails; it refines the older measure called time to restore service."
       },
       {
        "term": "Batch size",
@@ -1366,12 +1746,27 @@ TRACK.modules.push({
       {
        "term": "Reversibility",
        "def": "The ability to undo a decision or change quickly and cheaply."
+      },
+      {
+       "term": "Rework rate",
+       "def": "The share of deployments that are unplanned, made to fix user-facing problems."
       }
      ]
     },
     {
      "type": "reflection",
-     "prompt": "Which of the four key delivery metrics would your organisation be most embarrassed to publish? Why?"
+     "prompt": "Which of these delivery metrics would your organisation be most embarrassed to publish? Why?"
+    },
+    {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "In digital businesses technology is the product, so delivery speed is a strategic capability.",
+      "Track deployment frequency, lead time, change failure rate, recovery time and rework together.",
+      "The best teams are both faster and more stable, because small changes are easier to test and undo.",
+      "In regulated sectors, build controls into automated pipelines instead of skipping them.",
+      "Compare against your own trend; published performance bands move every year."
+     ]
     },
     {
      "type": "quiz",
@@ -1392,7 +1787,7 @@ TRACK.modules.push({
        "options": [
         "Deployment frequency",
         "Change failure rate across all deployments",
-        "Time to restore service",
+        "Failed deployment recovery time",
         "Lead time for changes"
        ],
        "answer": 3,
@@ -1430,6 +1825,17 @@ TRACK.modules.push({
        ],
        "answer": 2,
        "explain": "Automated, built-in controls let teams move quickly without bypassing safety."
+      },
+      {
+       "q": "A team deploys every day, but about a third of its deployments are unplanned fixes for problems users reported. Which metric captures this most directly?",
+       "options": [
+        "Deployment frequency",
+        "Rework rate",
+        "Lead time for changes",
+        "Flow efficiency"
+       ],
+       "answer": 1,
+       "explain": "Rework rate is the share of deployments that are unplanned fixes for user-facing problems. Frequency and lead time look healthy here, which is exactly why rework needs its own measure."
       }
      ]
     }
@@ -1561,6 +1967,115 @@ TRACK.modules.push({
      "title": "Put service management inside the pipeline"
     },
     {
+     "type": "topology",
+     "title": "An integrated delivery and service management toolchain",
+     "nodes": [
+      {
+       "id": "pol",
+       "kind": "shield",
+       "label": "Policy checks",
+       "sub": "Security and compliance as code",
+       "x": 2,
+       "y": 0
+      },
+      {
+       "id": "repo",
+       "kind": "doc",
+       "label": "Code repository",
+       "sub": "App and infrastructure code",
+       "x": 0,
+       "y": 2
+      },
+      {
+       "id": "ci",
+       "kind": "process",
+       "label": "CI/CD pipeline",
+       "sub": "Build, test, scan, deploy",
+       "x": 2,
+       "y": 2
+      },
+      {
+       "id": "prod",
+       "kind": "container",
+       "label": "Production",
+       "sub": "Progressive rollout",
+       "x": 4,
+       "y": 2
+      },
+      {
+       "id": "obs",
+       "kind": "monitor",
+       "label": "Observability",
+       "sub": "Metrics, logs, traces",
+       "x": 6,
+       "y": 2
+      },
+      {
+       "id": "dev",
+       "kind": "user",
+       "label": "Developer",
+       "x": 0,
+       "y": 4
+      },
+      {
+       "id": "itsm",
+       "kind": "server",
+       "label": "ITSM platform",
+       "sub": "Change, incident, CMDB",
+       "x": 4,
+       "y": 4
+      },
+      {
+       "id": "oncall",
+       "kind": "team",
+       "label": "On-call team",
+       "sub": "Chat and paging",
+       "x": 4,
+       "y": 6
+      }
+     ],
+     "links": [
+      {
+       "a": "dev",
+       "b": "repo",
+       "label": "commit"
+      },
+      {
+       "a": "repo",
+       "b": "ci"
+      },
+      {
+       "a": "ci",
+       "b": "pol",
+       "label": "gate"
+      },
+      {
+       "a": "ci",
+       "b": "prod",
+       "label": "deploy"
+      },
+      {
+       "a": "prod",
+       "b": "obs"
+      },
+      {
+       "a": "ci",
+       "b": "itsm",
+       "label": "change record"
+      },
+      {
+       "a": "obs",
+       "b": "itsm",
+       "label": "incidents"
+      },
+      {
+       "a": "itsm",
+       "b": "oncall"
+      }
+     ],
+     "caption": "The pipeline writes change records and the observability stack raises incidents, so the ITSM platform holds accurate data without manual forms. The CMDB is updated from the same deployments."
+    },
+    {
      "type": "table",
      "title": "Shifting security and controls left",
      "head": [
@@ -1680,6 +2195,17 @@ TRACK.modules.push({
     {
      "type": "reflection",
      "prompt": "Which manual control in your delivery process could be turned into an automated pipeline check, and what evidence would it produce?"
+    },
+    {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "DevOps is culture, automation, lean flow, measurement and sharing, not a toolset or job title.",
+      "Continuous integration merges small changes daily; continuous delivery keeps every change releasable.",
+      "Continuous deployment removes the last manual step for changes that pass every check.",
+      "Shift security and compliance checks left into every build, with policy as code.",
+      "Let the pipeline create change records with evidence attached."
+     ]
     },
     {
      "type": "quiz",
@@ -1806,6 +2332,52 @@ TRACK.modules.push({
        "meaning": "A burn rate of 1 uses the budget exactly over the window; 10 exhausts it ten times faster."
       }
      ]
+    },
+    {
+     "type": "chart",
+     "kind": "line",
+     "title": "Error budget burn over a 30-day window",
+     "labels": [
+      "Day 0",
+      "Day 5",
+      "Day 10",
+      "Day 12",
+      "Day 15",
+      "Day 20",
+      "Day 25",
+      "Day 30"
+     ],
+     "series": [
+      {
+       "name": "Budget left (even burn)",
+       "values": [
+        100,
+        83,
+        67,
+        60,
+        50,
+        33,
+        17,
+        0
+       ]
+      },
+      {
+       "name": "Budget left (actual)",
+       "values": [
+        100,
+        96,
+        92,
+        10,
+        9,
+        8,
+        7,
+        6
+       ]
+      }
+     ],
+     "unit": "%",
+     "yLabel": "Error budget remaining",
+     "caption": "Illustrative numbers matching the scenario later in this lesson: two incidents between days 10 and 12 burn most of the budget. After the policy slows releases, the actual line flattens and the month ends just inside the SLO."
     },
     {
      "type": "callout",
@@ -2013,6 +2585,17 @@ TRACK.modules.push({
      "prompt": "If you set an SLO for your most important service tomorrow, what would the SLI be, and who would have to agree to the target?"
     },
     {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "SRE sets user-centred SLOs on measured SLIs and keeps the external SLA looser than the SLO.",
+      "Error budget = 1 − SLO; it is permission to take risk, used up by failures.",
+      "Alert on burn rate, and let an agreed policy decide when releases slow or pause.",
+      "100% is the wrong target: users cannot perceive it and it blocks all change.",
+      "Cap toil and automate it; run blameless reviews whose actions are tracked to completion."
+     ]
+    },
+    {
      "type": "quiz",
      "items": [
       {
@@ -2124,33 +2707,69 @@ TRACK.modules.push({
      "type": "callout",
      "kind": "example",
      "text": "A fintech in Dhaka found that 85% of completed work was new features, 5% technical debt and 2% risk and security items. Incidents and audit findings were rising. Leadership set a target distribution of 60% features, 20% debt, 10% risk and 10% defects for six months; incidents fell by 40% and feature velocity recovered within two quarters.",
-     "title": "Balancing flow distribution"
+     "title": "Balancing flow distribution (illustrative case)"
     },
     {
-     "type": "flow",
+     "type": "chart",
+     "kind": "bar",
+     "title": "Flow distribution before and after rebalancing",
+     "labels": [
+      "Features",
+      "Technical debt",
+      "Risk and security",
+      "Defects"
+     ],
+     "series": [
+      {
+       "name": "Before",
+       "values": [
+        85,
+        5,
+        2,
+        8
+       ]
+      },
+      {
+       "name": "Target for six months",
+       "values": [
+        60,
+        20,
+        10,
+        10
+       ]
+      }
+     ],
+     "unit": "%",
+     "yLabel": "Share of completed work",
+     "caption": "Illustrative figures from the case above (defects are the remainder of the 'before' mix). Deliberately funding debt and risk work slows features briefly, then lets them flow faster."
+    },
+    {
+     "type": "cycle",
      "title": "Theory of constraints: five focusing steps",
+     "center": "Constraint",
      "items": [
       {
        "label": "Identify",
-       "text": "Find the constraint that limits the whole stream"
+       "text": "Find the constraint that limits the whole stream."
       },
       {
        "label": "Exploit",
-       "text": "Get the most out of it: no idle time, no low-value work"
+       "text": "Get the most out of it: no idle time, no low-value work."
       },
       {
        "label": "Subordinate",
-       "text": "Align everything else to the constraint's pace"
+       "text": "Align everything else to the constraint's pace."
       },
       {
        "label": "Elevate",
-       "text": "Add capacity or redesign if still limiting"
+       "text": "Add capacity or redesign if it still limits flow."
       },
       {
        "label": "Repeat",
-       "text": "A new constraint appears; start again"
+       "text": "A new constraint appears; start again without letting inertia become the constraint."
       }
-     ]
+     ],
+     "caption": "Improving anything other than the constraint only builds bigger queues in front of it. Each turn of the loop moves the constraint somewhere new."
     },
     {
      "type": "compare",
@@ -2282,6 +2901,17 @@ TRACK.modules.push({
     {
      "type": "reflection",
      "prompt": "Where is the constraint in the value stream you know best? What evidence tells you it is the constraint rather than just a busy team?"
+    },
+    {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "Once teams are fast, the constraint moves to dependencies, shared environments, approvals and funding.",
+      "Track flow time, velocity, load, efficiency and distribution across the whole stream.",
+      "Use the five focusing steps: improving a non-constraint only grows queues.",
+      "Balance flow distribution so debt, risk and defect work are funded, not starved.",
+      "Platform engineering removes recurring constraints when the platform is run as a product."
+     ]
     },
     {
      "type": "quiz",
@@ -2434,6 +3064,50 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "tree",
+     "title": "One objective, measurable key results, changeable initiatives",
+     "root": {
+      "label": "Objective",
+      "text": "Make digital admission effortless for every applicant",
+      "children": [
+       {
+        "label": "KR1",
+        "text": "Unaided completion 55% → 85%",
+        "children": [
+         {
+          "label": "Mobile-first form"
+         },
+         {
+          "label": "Help chat in Bangla"
+         }
+        ]
+       },
+       {
+        "label": "KR2",
+        "text": "Drop-out 40% → 15%",
+        "children": [
+         {
+          "label": "Save and resume"
+         },
+         {
+          "label": "Fee payment by wallet"
+         }
+        ]
+       },
+       {
+        "label": "KR3",
+        "text": "Decision time 21 → 7 days",
+        "children": [
+         {
+          "label": "Automated document checks"
+         }
+        ]
+       }
+      ]
+     },
+     "caption": "Key results describe outcomes; the initiatives beneath them are bets that can be swapped if the numbers do not move. Example figures are illustrative."
+    },
+    {
      "type": "callout",
      "kind": "pro",
      "text": "'Launch the new admission portal' is an output; it can be completed while nothing improves. 'Reduce application drop-out from 40% to 15%' is an outcome. Key results should describe changes in behaviour or results that matter to stakeholders.",
@@ -2470,30 +3144,32 @@ TRACK.modules.push({
      ]
     },
     {
-     "type": "flow",
+     "type": "cycle",
      "title": "Portfolio management cycle",
+     "center": "Portfolio",
      "items": [
       {
        "label": "Collect demand",
-       "text": "Ideas, requests, regulatory needs, risks"
+       "text": "Ideas, requests, regulatory needs and risks."
       },
       {
        "label": "Evaluate",
-       "text": "Value, cost, risk, strategic fit"
+       "text": "Value, cost, risk and strategic fit."
       },
       {
        "label": "Prioritise and fund",
-       "text": "Choose and balance the portfolio"
+       "text": "Choose and balance the portfolio within capacity."
       },
       {
        "label": "Execute and monitor",
-       "text": "Track outcomes and spending"
+       "text": "Track outcomes and spending."
       },
       {
        "label": "Rebalance",
-       "text": "Stop, continue or scale based on evidence"
+       "text": "Stop, continue or scale based on evidence, then take in new demand."
       }
-     ]
+     ],
+     "caption": "A portfolio is re-decided on a regular rhythm, not approved once a year. Stopping work in step 5 is what frees capacity for better ideas in step 1."
     },
     {
      "type": "compare",
@@ -2612,6 +3288,17 @@ TRACK.modules.push({
      "prompt": "How many 'top priorities' does your organisation have right now? Who decides which one wins when they conflict?"
     },
     {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "Direction flows from vision and strategy to objectives, portfolio and team backlogs.",
+      "Key results state outcomes; initiatives are the changeable work expected to move them.",
+      "Plan on strategic, tactical and operational horizons with different questions and artefacts.",
+      "Run the portfolio as a cycle: rank against strategy, limit work in progress, rebalance on evidence.",
+      "Balance run, grow and transform spending deliberately; run usually takes the largest share."
+     ]
+    },
+    {
      "type": "quiz",
      "items": [
       {
@@ -2678,8 +3365,9 @@ TRACK.modules.push({
      "text": "Every service carries risk: outages, data breaches, supplier failure, regulatory penalties, safety incidents. **Governance, risk and compliance (GRC)** ensures that the organisation knows its risks, takes them deliberately within its appetite, and can prove that it meets its legal and contractual obligations. For a service manager, GRC is not paperwork; it is the discipline that lets the organisation move fast without stumbling into avoidable harm."
     },
     {
-     "type": "flow",
+     "type": "cycle",
      "title": "Risk management cycle",
+     "center": "Risk appetite",
      "items": [
       {
        "label": "Identify",
@@ -2687,21 +3375,22 @@ TRACK.modules.push({
       },
       {
        "label": "Assess",
-       "text": "Likelihood and impact, before and after controls"
+       "text": "Likelihood and impact, before and after controls."
       },
       {
        "label": "Treat",
-       "text": "Avoid, reduce, transfer, accept, or exploit opportunities"
+       "text": "Avoid, reduce, transfer, accept, or exploit opportunities."
       },
       {
        "label": "Monitor",
-       "text": "Track risk indicators and control effectiveness"
+       "text": "Track risk indicators and control effectiveness."
       },
       {
        "label": "Report",
-       "text": "Inform governance and adjust appetite or treatment"
+       "text": "Inform governance and adjust appetite or treatment."
       }
-     ]
+     ],
+     "caption": "Every stage is judged against the appetite at the centre. Reporting feeds governance, which may change the appetite and restart the loop."
     },
     {
      "type": "formula",
@@ -2756,6 +3445,43 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "matrix",
+     "title": "Likelihood × impact: a first cut at treatment",
+     "x": "Likelihood",
+     "y": "Impact",
+     "quadrants": [
+      {
+       "title": "Prepare and transfer",
+       "items": [
+        "Rare but severe: data centre flood",
+        "Tested recovery site, insurance"
+       ]
+      },
+      {
+       "title": "Treat now",
+       "items": [
+        "Likely and severe: unpatched internet systems",
+        "Reduce or avoid; executive attention"
+       ]
+      },
+      {
+       "title": "Accept and watch",
+       "items": [
+        "Rare and minor",
+        "Record, review periodically"
+       ]
+      },
+      {
+       "title": "Reduce with routine controls",
+       "items": [
+        "Frequent but minor: password lockouts",
+        "Automate and standardise"
+       ]
+      }
+     ],
+     "caption": "The quadrant suggests a starting treatment, not a final answer; residual risk after treatment must still sit within appetite."
+    },
+    {
      "type": "framework",
      "title": "The three lines model",
      "items": [
@@ -2785,11 +3511,13 @@ TRACK.modules.push({
     {
      "type": "keypoints",
      "items": [
-      "Data protection and privacy laws, including data localisation requirements.",
+      "Data protection and privacy laws, including data localisation requirements; check the current national rules, which have been changing in several countries.",
       "Central bank IT and cyber-security guidelines for banks and financial services.",
       "Telecom regulator rules on lawful interception, uptime and customer data.",
-      "Payment card industry security standards for card data.",
+      "Payment card industry security standards for card data (version 4.x, whose later-dated requirements became mandatory in 2025).",
       "Health-data confidentiality rules for hospitals and clinics.",
+      "For services in or for EU markets: operational resilience rules for financial entities (applying since January 2025) and the NIS2 cyber-security directive.",
+      "Management-system standards used as evidence: ISO/IEC 20000-1:2018 (service management), ISO/IEC 27001:2022 (information security), ISO/IEC 42001:2023 (AI).",
       "Contractual obligations in customer and supplier agreements."
      ],
      "title": "Common compliance obligations for services in South Asia and beyond"
@@ -2887,6 +3615,17 @@ TRACK.modules.push({
     {
      "type": "reflection",
      "prompt": "Which control in your area depends most on human memory? How could it be built into the tools people already use?"
+    },
+    {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "GRC lets an organisation take risk deliberately, within appetite, and prove its obligations are met.",
+      "Treat risks by avoiding, reducing, transferring or accepting them; ALE = single loss × annual rate.",
+      "The three lines: management owns risk, risk and compliance challenge, internal audit assures.",
+      "The strongest controls are automated, preventive and built into the tools people use.",
+      "Regulations and standards change; keep a current obligations register rather than relying on memory."
+     ]
     },
     {
      "type": "quiz",
@@ -2988,6 +3727,41 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "tree",
+     "title": "Goal–question–metric for clinical IT time loss",
+     "root": {
+      "label": "Goal",
+      "text": "Reduce time clinicians lose to IT problems",
+      "children": [
+       {
+        "label": "How often?",
+        "children": [
+         {
+          "label": "Incidents hitting clinical workflows per week"
+         }
+        ]
+       },
+       {
+        "label": "How long?",
+        "children": [
+         {
+          "label": "Minutes lost per shift"
+         }
+        ]
+       },
+       {
+        "label": "Where and why?",
+        "children": [
+         {
+          "label": "Top five causes by ward"
+         }
+        ]
+       }
+      ]
+     },
+     "caption": "Each metric exists because a question needs it, and each question exists because of the goal. A metric with no parent question is a candidate for removal."
+    },
+    {
      "type": "table",
      "title": "CSFs and KPIs",
      "head": [
@@ -3054,6 +3828,45 @@ TRACK.modules.push({
      "kind": "warning",
      "text": "When a measure becomes a target, it stops being a good measure. Desks targeted on closure time close tickets early. Teams targeted on deployment count split changes artificially. Pair measures (speed with quality), review them together and use them to learn, not to rank people.",
      "title": "Goodhart's law in service management"
+    },
+    {
+     "type": "chart",
+     "kind": "line",
+     "title": "A target met, an outcome missed",
+     "labels": [
+      "Month 1",
+      "Month 2",
+      "Month 3",
+      "Month 4",
+      "Month 5",
+      "Month 6"
+     ],
+     "series": [
+      {
+       "name": "Resolved within 4 hours",
+       "values": [
+        70,
+        78,
+        85,
+        90,
+        94,
+        96
+       ]
+      },
+      {
+       "name": "Tickets reopened",
+       "values": [
+        6,
+        8,
+        11,
+        14,
+        17,
+        19
+       ]
+      }
+     ],
+     "unit": "%",
+     "caption": "Illustrative numbers. As the closure target is chased, reopened tickets climb: a paired quality measure exposes what the single target hid."
     },
     {
      "type": "compare",
@@ -3184,6 +3997,17 @@ TRACK.modules.push({
      "prompt": "Name one metric your organisation reports that changes no decisions. What would you replace it with?"
     },
     {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "Derive measures from goals and questions; a metric that changes no decision is noise.",
+      "Balance measures across customer, financial, operational, people and risk perspectives.",
+      "Goodhart's law: pair measures so none can be improved at the expense of another.",
+      "Use leading indicators to act before lagging results are missed.",
+      "Design dashboards for one audience and purpose, leading with outcomes and trends."
+     ]
+    },
+    {
      "type": "quiz",
      "items": [
       {
@@ -3302,26 +4126,28 @@ TRACK.modules.push({
      ]
     },
     {
-     "type": "flow",
+     "type": "cycle",
      "title": "PDCA cycle",
+     "center": "Learning by small experiments",
      "items": [
       {
        "label": "Plan",
-       "text": "Define the problem, hypothesis and measure"
+       "text": "Define the problem, hypothesis and measure."
       },
       {
        "label": "Do",
-       "text": "Run a small, controlled change"
+       "text": "Run a small, controlled change."
       },
       {
        "label": "Check",
-       "text": "Compare results with the expected outcome"
+       "text": "Compare results with the expected outcome."
       },
       {
        "label": "Act",
-       "text": "Standardise, adapt or abandon; plan the next cycle"
+       "text": "Standardise, adapt or abandon; plan the next cycle."
       }
-     ]
+     ],
+     "caption": "Small cycles make it cheap to be wrong. The Check step needs the measure defined in Plan, otherwise the loop produces opinions instead of learning."
     },
     {
      "type": "framework",
@@ -3415,6 +4241,45 @@ TRACK.modules.push({
        "text": "Reassess after 6–12 months to confirm progress."
       }
      ]
+    },
+    {
+     "type": "chart",
+     "kind": "bar",
+     "title": "Capability assessment: current and target levels",
+     "labels": [
+      "Incident",
+      "Problem",
+      "Change",
+      "Service desk",
+      "Knowledge",
+      "Monitoring"
+     ],
+     "series": [
+      {
+       "name": "Current",
+       "values": [
+        3,
+        2,
+        2,
+        3,
+        1,
+        2
+       ]
+      },
+      {
+       "name": "Target (12 months)",
+       "values": [
+        3,
+        3,
+        4,
+        3,
+        3,
+        3
+       ]
+      }
+     ],
+     "yLabel": "Capability level (1–5)",
+     "caption": "Illustrative results. Targets rise only where the gap limits value, here change and knowledge; incident management stays at 3 because it already serves users well."
     },
     {
      "type": "callout",
@@ -3517,6 +4382,17 @@ TRACK.modules.push({
     {
      "type": "reflection",
      "prompt": "Which improvement method does your organisation use by default? Name one problem it was the wrong choice for."
+    },
+    {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "Choose the improvement method to fit the problem: PDCA, Lean, DMAIC, A3 or kaizen events.",
+      "Lean wastes in IT include waiting, handovers, rework, over-processing, inventory and task switching.",
+      "Capability describes one practice; maturity describes how the whole system works together.",
+      "Assess with evidence and validate ratings with the people who do the work.",
+      "Raise capability where gaps limit value; maturity scores are not goals in themselves."
+     ]
     },
     {
      "type": "quiz",
@@ -3647,6 +4523,12 @@ TRACK.modules.push({
      "title": "Digital strategy in a power distribution company"
     },
     {
+     "type": "callout",
+     "kind": "insight",
+     "title": "Sustainability belongs in the IT strategy",
+     "text": "Boards increasingly ask what technology costs the planet as well as the budget. Practical levers include extending device life, right-sizing and switching off idle cloud resources, choosing efficient hosting and suppliers, and reporting energy use and e-waste per service. Reporting duties differ by country and sector and are still changing, so confirm which apply to your organisation before designing the measures."
+    },
+    {
      "type": "table",
      "title": "Strategy analysis tools",
      "head": [
@@ -3732,6 +4614,43 @@ TRACK.modules.push({
        "text": "Review the roadmap quarterly; stop, pivot or scale initiatives."
       }
      ]
+    },
+    {
+     "type": "timeline",
+     "title": "A staged roadmap with funding gates",
+     "items": [
+      {
+       "when": "Months 0–3",
+       "label": "Discover and baseline",
+       "text": "Tranche 1: user research, data baseline, prototype."
+      },
+      {
+       "when": "Gate 1",
+       "label": "Evidence review",
+       "text": "Continue only if users adopt the prototype."
+      },
+      {
+       "when": "Months 4–12",
+       "label": "Build the core",
+       "text": "Tranche 2: shared data platform and a first app release."
+      },
+      {
+       "when": "Gate 2",
+       "label": "Value check",
+       "text": "Adoption and benefits measured against the business case."
+      },
+      {
+       "when": "Year 2",
+       "label": "Scale",
+       "text": "Tranche 3: roll out widely, retire legacy, add partners."
+      },
+      {
+       "when": "Year 3",
+       "label": "Optimise",
+       "text": "Analytics, automation and efficiency gains."
+      }
+     ],
+     "caption": "Each gate is a real decision to continue, change course or stop. Staging the money this way limits the loss if adoption assumptions turn out wrong."
     },
     {
      "type": "keypoints",
@@ -3848,6 +4767,17 @@ TRACK.modules.push({
     {
      "type": "reflection",
      "prompt": "Which strategic position does your organisation actually pursue, judged by where it invests, not by what it says?"
+    },
+    {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "Digital strategy sets how technology serves the business; IT strategy sets how the technology function enables it.",
+      "Be explicit about the strategic position: operational excellence, customer intimacy or product leadership.",
+      "Appraise investments with ROI, payback and NPV, stating periods and all costs.",
+      "Fund uncertain transformations in stages with evidence-based gates.",
+      "Include legacy constraints, skills, data and sustainability in the roadmap, not only new technology."
+     ]
     },
     {
      "type": "quiz",
@@ -4020,6 +4950,135 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "topology",
+     "title": "An AI-assisted service operation with human oversight",
+     "nodes": [
+      {
+       "id": "guard",
+       "kind": "shield",
+       "label": "Guardrails",
+       "sub": "Permissions, policy, logging",
+       "x": 3,
+       "y": 0
+      },
+      {
+       "id": "mon",
+       "kind": "monitor",
+       "label": "Monitoring",
+       "x": 5,
+       "y": 0
+      },
+      {
+       "id": "kb",
+       "kind": "doc",
+       "label": "Knowledge",
+       "sub": "Approved articles to retrieve",
+       "x": 0,
+       "y": 2
+      },
+      {
+       "id": "itsm",
+       "kind": "server",
+       "label": "ITSM platform",
+       "sub": "Tickets, CMDB, audit log",
+       "x": 3,
+       "y": 2
+      },
+      {
+       "id": "aiops",
+       "kind": "model",
+       "label": "AIOps engine",
+       "sub": "Correlation, anomalies",
+       "x": 5,
+       "y": 2
+      },
+      {
+       "id": "va",
+       "kind": "model",
+       "label": "Virtual agent",
+       "sub": "Grounded answers",
+       "x": 1,
+       "y": 4
+      },
+      {
+       "id": "agent",
+       "kind": "team",
+       "label": "Human agents",
+       "sub": "Review and decide",
+       "x": 3,
+       "y": 4
+      },
+      {
+       "id": "rb",
+       "kind": "process",
+       "label": "Runbooks",
+       "sub": "Automated low-risk actions",
+       "x": 5,
+       "y": 4
+      },
+      {
+       "id": "users",
+       "kind": "user",
+       "label": "Users",
+       "x": 1,
+       "y": 6
+      }
+     ],
+     "links": [
+      {
+       "a": "users",
+       "b": "va"
+      },
+      {
+       "a": "va",
+       "b": "kb",
+       "label": "retrieve"
+      },
+      {
+       "a": "va",
+       "b": "agent",
+       "label": "handoff"
+      },
+      {
+       "a": "va",
+       "b": "itsm",
+       "label": "ticket"
+      },
+      {
+       "a": "agent",
+       "b": "itsm"
+      },
+      {
+       "a": "mon",
+       "b": "aiops",
+       "label": "events"
+      },
+      {
+       "a": "aiops",
+       "b": "itsm",
+       "label": "incident"
+      },
+      {
+       "a": "aiops",
+       "b": "rb",
+       "label": "auto-fix"
+      },
+      {
+       "a": "rb",
+       "b": "agent",
+       "label": "approval",
+       "style": "dashed"
+      },
+      {
+       "a": "guard",
+       "b": "itsm",
+       "label": "policy",
+       "style": "dashed"
+      }
+     ],
+     "caption": "AI answers from approved knowledge and acts only through governed paths: risky actions go to a person, and everything is logged in the ITSM platform. Users can always reach a human."
+    },
+    {
      "type": "callout",
      "kind": "insight",
      "text": "Scripting a password reset saves minutes. Designing role-based access so most access requests need no human decision saves days. The biggest automation gains usually come from redesigning the flow first, then applying automation and AI to what remains.",
@@ -4054,6 +5113,43 @@ TRACK.modules.push({
        "text": "Start with a limited scope; compare outcomes with the baseline."
       }
      ]
+    },
+    {
+     "type": "matrix",
+     "title": "Automation candidates: volume against cost of a wrong action",
+     "x": "Volume and rule clarity",
+     "y": "Cost of a wrong action",
+     "quadrants": [
+      {
+       "title": "Keep human; AI suggests",
+       "items": [
+        "Rare, judgement-heavy, high impact",
+        "e.g. customer compensation decisions"
+       ]
+      },
+      {
+       "title": "Automate with approval",
+       "items": [
+        "Frequent but risky",
+        "e.g. privileged access grants"
+       ]
+      },
+      {
+       "title": "Not worth it yet",
+       "items": [
+        "Rare and low impact",
+        "Revisit when volume grows"
+       ]
+      },
+      {
+       "title": "Automate fully, monitor",
+       "items": [
+        "Frequent, clear rules, reversible",
+        "e.g. password resets, ticket tagging"
+       ]
+      }
+     ],
+     "caption": "Start in the bottom-right, where benefits are large and mistakes are cheap to undo. The higher an item sits, the more human oversight its design needs."
     },
     {
      "type": "formula",
@@ -4171,6 +5267,17 @@ TRACK.modules.push({
     {
      "type": "reflection",
      "prompt": "Which task in your service area is done thousands of times a year with clear rules? What is stopping it from being automated?"
+    },
+    {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "AI is one option inside a wider automation strategy; redesign the flow before automating it.",
+      "Match the type: task automation, orchestration, intelligent automation or governed agents.",
+      "Start with high-volume, clear-rule, low-risk work where data is plentiful.",
+      "Pair containment with resolution quality, satisfaction and an easy route to a human.",
+      "Count all costs: build, run, licences, model monitoring and the knowledge upkeep AI depends on."
+     ]
     },
     {
      "type": "quiz",
@@ -4291,6 +5398,47 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "text",
+     "text": "External rules for AI have matured quickly, and they reach service organisations through customers, vendors and regulators even where no local AI law applies yet. Several countries, including Bangladesh, have been developing national AI policies. Use the milestones below as orientation, and check the current official texts before relying on any date."
+    },
+    {
+     "type": "timeline",
+     "title": "AI governance milestones relevant to service operations",
+     "items": [
+      {
+       "when": "Jan 2023",
+       "label": "NIST AI Risk Management Framework 1.0",
+       "text": "A voluntary framework organised around govern, map, measure and manage."
+      },
+      {
+       "when": "Dec 2023",
+       "label": "ISO/IEC 42001",
+       "text": "The first certifiable management-system standard for AI."
+      },
+      {
+       "when": "Aug 2024",
+       "label": "EU AI Act in force",
+       "text": "Risk-based rules for AI placed on, or used in, the EU market."
+      },
+      {
+       "when": "Feb 2025",
+       "label": "First EU obligations apply",
+       "text": "Prohibited practices and AI literacy duties."
+      },
+      {
+       "when": "Aug 2025",
+       "label": "General-purpose AI duties",
+       "text": "Obligations for providers of general-purpose AI models begin."
+      },
+      {
+       "when": "2026–2027",
+       "label": "High-risk obligations phase in",
+       "text": "Some of these dates have been subject to proposed changes; check the current official timetable."
+      }
+     ],
+     "caption": "Most service-desk uses of AI are not high-risk, but uses that affect people's access to jobs, credit or essential services can be. Classify each AI use case before deciding its controls."
+    },
+    {
      "type": "framework",
      "title": "Principles for responsible AI in services",
      "items": [
@@ -4352,6 +5500,69 @@ TRACK.modules.push({
        ]
       }
      ]
+    },
+    {
+     "type": "sequence",
+     "title": "Human in the loop for a high-risk agent action",
+     "actors": [
+      "User",
+      "AI agent",
+      "Guardrail policy",
+      "Human approver",
+      "Identity system"
+     ],
+     "steps": [
+      {
+       "from": 0,
+       "to": 1,
+       "label": "I need the finance reports"
+      },
+      {
+       "from": 1,
+       "to": 1,
+       "label": "Check knowledge and user role"
+      },
+      {
+       "from": 1,
+       "to": 2,
+       "label": "Propose: grant finance-read role"
+      },
+      {
+       "from": 2,
+       "to": 1,
+       "label": "High risk: approval required",
+       "reply": true
+      },
+      {
+       "from": 1,
+       "to": 3,
+       "label": "Request with reason and evidence"
+      },
+      {
+       "from": 3,
+       "to": 1,
+       "label": "Approved for 30 days",
+       "reply": true
+      },
+      {
+       "from": 1,
+       "to": 4,
+       "label": "Grant role, expiry in 30 days"
+      },
+      {
+       "from": 4,
+       "to": 1,
+       "label": "Granted and logged",
+       "reply": true
+      },
+      {
+       "from": 1,
+       "to": 0,
+       "label": "Access ready until expiry",
+       "reply": true
+      }
+     ],
+     "caption": "The agent does the legwork, but a guardrail outside the model decides that this action needs a person. Time-limited access and logging make the decision reversible and auditable."
     },
     {
      "type": "formula",
@@ -4505,6 +5716,17 @@ TRACK.modules.push({
      "prompt": "If an AI system in your service made a harmful mistake tomorrow, who would be accountable, and how would you find out it had happened?"
     },
     {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "AI fails confidently and fast, so responsible AI is part of governance, not an optional extra.",
+      "Control hallucination, bias, privacy leakage, prompt injection and over-broad permissions explicitly.",
+      "Set human oversight by impact: in the loop for high-risk actions, on the loop for medium, out only for low-risk.",
+      "Evaluate with precision, recall and grounded accuracy across languages and user groups.",
+      "Register AI systems as configuration items and track the evolving regulations and standards that apply."
+     ]
+    },
+    {
      "type": "quiz",
      "items": [
       {
@@ -4561,6 +5783,17 @@ TRACK.modules.push({
        ],
        "answer": 1,
        "explain": "Fairness checks reveal whether some users get worse service."
+      },
+      {
+       "q": "An HR team asks the IT service organisation to deploy an AI model that screens job applicants for internal roles. What should the service owner do before deployment?",
+       "options": [
+        "Run it like any chatbot pilot and track containment",
+        "Classify its risk level first and set matching controls",
+        "Wait for the vendor to confirm the model is accurate",
+        "Deploy it, since internal HR tools are exempt from AI rules"
+       ],
+       "answer": 1,
+       "explain": "Uses that affect access to employment can be treated as high-risk under some AI regulations and need stronger oversight, testing for bias and documentation. Containment is irrelevant, vendor claims are not evidence, and internal use is not an automatic exemption."
       }
      ]
     }
@@ -4718,11 +5951,33 @@ TRACK.modules.push({
       ],
       [
        "Weighted total",
-       "3.65",
-       "3.25",
+       "3.55",
+       "3.40",
        "3.90"
       ]
      ]
+    },
+    {
+     "type": "chart",
+     "kind": "bar",
+     "title": "Weighted totals for the three desk options",
+     "labels": [
+      "Insource central",
+      "Outsource fully",
+      "Hybrid L1 + partner L2"
+     ],
+     "series": [
+      {
+       "name": "Weighted score (out of 5)",
+       "values": [
+        3.55,
+        3.4,
+        3.9
+       ]
+      }
+     ],
+     "yLabel": "Weighted score",
+     "caption": "Calculated from the table above. The hybrid wins by 0.35 points, so test whether a reasonable change in the weights would reverse the ranking before recommending it."
     },
     {
      "type": "keypoints",
@@ -4822,6 +6077,17 @@ TRACK.modules.push({
     {
      "type": "reflection",
      "prompt": "Think of a decision you made recently that went wrong. Did you treat a complex situation as if it were merely complicated?"
+    },
+    {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "Frame the real problem before generating options, and always consider at least three.",
+      "Classify the situation: clear, complicated, complex or chaotic, and act accordingly.",
+      "Look past symptoms to system causes such as batch size, demand and back-stage failures.",
+      "Agree criteria weights before scoring, then test how sensitive the result is.",
+      "Strong recommendations name trade-offs, assumptions and early signs of being wrong."
+     ]
     },
     {
      "type": "quiz",
@@ -5036,6 +6302,45 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "chart",
+     "kind": "line",
+     "title": "Adoption against plan after go-live",
+     "labels": [
+      "Month 1",
+      "Month 2",
+      "Month 3",
+      "Month 4",
+      "Month 5",
+      "Month 6"
+     ],
+     "series": [
+      {
+       "name": "Planned adoption",
+       "values": [
+        20,
+        40,
+        60,
+        75,
+        85,
+        90
+       ]
+      },
+      {
+       "name": "Actual adoption",
+       "values": [
+        12,
+        22,
+        30,
+        33,
+        35,
+        35
+       ]
+      }
+     ],
+     "unit": "%",
+     "caption": "Illustrative numbers resembling the telecom scenario below. A flattening actual line after month 3 is the signal to look for blocked willingness or ability, not to repeat training."
+    },
+    {
      "type": "keypoints",
      "items": [
       "Update measures and incentives to reward new behaviours.",
@@ -5146,6 +6451,17 @@ TRACK.modules.push({
      "prompt": "Recall a change you were asked to adopt. What would have made you move faster from 'aware' to 'able'?"
     },
     {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "Transformations usually fail on adoption, not design.",
+      "People move from aware to willing, knowing, able and sustained; find where they are stuck.",
+      "Middle managers and respected champions shape daily behaviour more than announcements do.",
+      "Treat resistance as information and adjust the design where concerns are valid.",
+      "Measure adoption by behaviour, retire old routes and reinforce for at least six months."
+     ]
+    },
+    {
      "type": "quiz",
      "items": [
       {
@@ -5223,40 +6539,44 @@ TRACK.modules.push({
      "text": "This final lesson brings the eight stages of the loop together. Real organisations do not present problems labelled 'incident' or 'strategy'. They present a tangle: outages, angry customers, a stretched team, a demanding regulator, a new AI tool someone already bought. Your job as a master practitioner is to see the system, choose where to intervene first, and lead the organisation through the change."
     },
     {
-     "type": "layers",
+     "type": "cycle",
      "title": "The ZITIL Service Value Loop as a diagnostic",
+     "center": "ZITIL Service Value Loop",
      "items": [
       {
        "label": "Value",
-       "parts": [
-        "Who are the stakeholders and what outcomes, costs and risks matter?"
-       ]
+       "text": "Who are the stakeholders and which outcomes, costs and risks matter?"
       },
       {
        "label": "Model",
-       "parts": [
-        "What do the four dimensions and value streams reveal?"
-       ]
+       "text": "What do the four dimensions and value streams reveal?"
       },
       {
-       "label": "Restore and Control",
-       "parts": [
-        "How well are incidents, problems, changes and service levels managed?"
-       ]
+       "label": "Restore",
+       "text": "How fast and calmly is service restored, and are causes removed?"
       },
       {
-       "label": "Journey and Flow",
-       "parts": [
-        "What do customers experience? Where does work wait?"
-       ]
+       "label": "Control",
+       "text": "Are changes, assets and service levels managed by risk?"
       },
       {
-       "label": "Direct and Lead",
-       "parts": [
-        "Is there direction, governance, measurement and a credible adoption plan, including for AI?"
-       ]
+       "label": "Journey",
+       "text": "What do customers actually experience, stage by stage?"
+      },
+      {
+       "label": "Flow",
+       "text": "Where does work wait, and what are the SLOs and error budgets?"
+      },
+      {
+       "label": "Direct",
+       "text": "Are direction, governance, risk and measurement aligned?"
+      },
+      {
+       "label": "Lead",
+       "text": "Is there a credible adoption plan, including for AI?"
       }
-     ]
+     ],
+     "caption": "Walk the loop clockwise to diagnose any organisation; the weakest stage is usually where to intervene first. Each module of this course corresponds to one stage."
     },
     {
      "type": "case",
@@ -5342,6 +6662,38 @@ TRACK.modules.push({
      "title": "Think in sequences"
     },
     {
+     "type": "timeline",
+     "title": "Stabilise before you transform: an example first 90 days",
+     "items": [
+      {
+       "when": "Week 1",
+       "label": "Command structure",
+       "text": "Major incident process, commander rota and stakeholder updates."
+      },
+      {
+       "when": "Weeks 2–4",
+       "label": "Reduce noise and risk",
+       "text": "Cut non-actionable alerts; protect festival peaks from risky changes."
+      },
+      {
+       "when": "Month 2",
+       "label": "Remove repeat causes",
+       "text": "Problem reviews for the top repeat incidents; first standard changes."
+      },
+      {
+       "when": "Month 3",
+       "label": "Agree measures",
+       "text": "SLOs, experience measures and a roadmap taken to the board."
+      },
+      {
+       "when": "Months 4–6",
+       "label": "Pilot AI responsibly",
+       "text": "Grounded virtual agent with human oversight and clear success measures."
+      }
+     ],
+     "caption": "An illustrative order for a provider in crisis. Each step creates the stability or evidence the next one needs, which is exactly what 'FIRST' questions test."
+    },
+    {
      "type": "scenario",
      "title": "What to do first",
      "situation": "You join a government hospital network as head of IT services. In your first week you find: no service catalogue, a major incident every week, an outsourced desk with an expiring contract in eight months, and a ministry request for a digital strategy in six months. What do you prioritise first?",
@@ -5419,6 +6771,17 @@ TRACK.modules.push({
     {
      "type": "reflection",
      "prompt": "Apply the ZITIL Service Value Loop to your own organisation. Which stage is weakest today, and what is the first intervention you would lead?"
+    },
+    {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "Real situations arrive tangled; use the loop to see the whole system before acting.",
+      "Read the qualifier first: FIRST, NEXT, BEST and MOST change the right answer.",
+      "Distractors add approvals, buy tools, blame people, optimise non-constraints or freeze everything.",
+      "Think in sequences: restore before diagnose, stabilise before transform, simplify before automate.",
+      "Justify every recommendation with value, evidence, trade-offs and how you will know early if it fails."
+     ]
     },
     {
      "type": "quiz",

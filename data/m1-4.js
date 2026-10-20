@@ -117,6 +117,43 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "matrix",
+     "title": "Utility and warranty together create value",
+     "x": "Warranty: fit for use (available, secure, fast enough)",
+     "y": "Utility: fit for purpose (does what the consumer needs)",
+     "quadrants": [
+      {
+       "title": "Useful but untrusted",
+       "items": [
+        "Right features, frequent failures",
+        "Users keep spreadsheets 'just in case'"
+       ]
+      },
+      {
+       "title": "Value delivered",
+       "items": [
+        "Right features, reliably delivered",
+        "Payroll correct and on time every 25th"
+       ]
+      },
+      {
+       "title": "No value",
+       "items": [
+        "Wrong features and unreliable",
+        "Candidate to retire or redesign"
+       ]
+      },
+      {
+       "title": "Reliable but unhelpful",
+       "items": [
+        "Always up, does not help the outcome",
+        "A fast portal for a task nobody needs"
+       ]
+      }
+     ],
+     "caption": "A service reaches the top-right only when utility and warranty are both high. Spending on warranty alone moves a service to the right, never upwards."
+    },
+    {
      "type": "text",
      "text": "Value is **co-created**. A provider can supply an excellent learning platform to a university, but if lecturers never upload materials and students are not shown how to submit work, no value appears. The consumer contributes data, time, adoption effort and feedback. This is why modern service management treats the relationship, not just the service, as the unit of design: onboarding, training, communication and feedback loops are part of how value is produced."
     },
@@ -129,6 +166,47 @@ TRACK.modules.push({
       "Consumers see offerings; providers manage products. Confusing the two leads to catalogues full of internal components nobody can order."
      ],
      "title": "Products, offerings and services"
+    },
+    {
+     "type": "tree",
+     "title": "One product, several offerings",
+     "root": {
+      "label": "Product: cloud hosting platform",
+      "text": "People, technology, partners and processes run by the provider",
+      "children": [
+       {
+        "label": "Offering: start-up tier",
+        "children": [
+         {
+          "label": "Access granted",
+          "text": "Shared compute and storage"
+         },
+         {
+          "label": "Actions performed",
+          "text": "Business-hours support"
+         }
+        ]
+       },
+       {
+        "label": "Offering: regulated tier",
+        "children": [
+         {
+          "label": "Goods transferred",
+          "text": "Hardware security tokens"
+         },
+         {
+          "label": "Access granted",
+          "text": "Dedicated in-country hosting"
+         },
+         {
+          "label": "Actions performed",
+          "text": "24/7 support and audit reports"
+         }
+        ]
+       }
+      ]
+     },
+     "caption": "Consumers order offerings; the provider manages the product behind them. Each offering is a mix of goods transferred, access granted and actions performed."
     },
     {
      "type": "scenario",
@@ -221,6 +299,17 @@ TRACK.modules.push({
     {
      "type": "reflection",
      "prompt": "Pick one service your organisation provides. Write one sentence describing it in your team's language and one in the language of its users. How different are they?"
+    },
+    {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "A service enables outcomes while the provider carries costs and risks the consumer would otherwise hold.",
+      "Customer, user and sponsor are different roles with different priorities; design for all three.",
+      "Value needs both utility (fit for purpose) and warranty (fit for use).",
+      "Value is co-created: adoption, data and feedback from consumers are part of producing it.",
+      "Catalogues should show offerings in consumer language, not internal components."
+     ]
     },
     {
      "type": "quiz",
@@ -412,6 +501,50 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "tree",
+     "title": "Components of the service value system",
+     "root": {
+      "label": "Service value system",
+      "text": "Opportunity and demand in, value out",
+      "children": [
+       {
+        "label": "Guiding principles",
+        "text": "Seven rules of thumb for any decision"
+       },
+       {
+        "label": "Governance",
+        "text": "Evaluate, direct, monitor"
+       },
+       {
+        "label": "Service value chain",
+        "text": "Plan · Improve · Engage · Design and transition · Obtain/build · Deliver and support"
+       },
+       {
+        "label": "Practices",
+        "children": [
+         {
+          "label": "General management",
+          "text": "e.g. risk, portfolio, workforce"
+         },
+         {
+          "label": "Service management",
+          "text": "e.g. incident, change, service desk"
+         },
+         {
+          "label": "Technical management",
+          "text": "e.g. deployment, infrastructure"
+         }
+        ]
+       },
+       {
+        "label": "Continual improvement",
+        "text": "At every level, all the time"
+       }
+      ]
+     },
+     "caption": "Five components sit between demand and value. When one is weak, the symptom usually appears somewhere else: as delay, inconsistency or unmanaged risk."
+    },
+    {
      "type": "callout",
      "kind": "warning",
      "text": "Silos form when each department optimises its own measures: the service desk closes tickets fast, development ships features fast, operations keeps change low. Each looks good; the consumer still waits two weeks for a working fix. The value system view asks one question of every team: how does your work move value towards the consumer?",
@@ -548,6 +681,17 @@ TRACK.modules.push({
      "prompt": "Trace one important piece of demand your organisation handled this year. Where did it wait longest, and which part of the value system owned that wait?"
     },
     {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "The service value system shows how every part of the organisation turns demand into value.",
+      "Its components are guiding principles, governance, the value chain, practices and continual improvement.",
+      "Silos that optimise local measures slow the end-to-end flow the consumer experiences.",
+      "Agility and resilience can rise together through small, automated, reversible changes.",
+      "Trace real demand through the system to find the weakest link before redesigning anything."
+     ]
+    },
+    {
      "type": "quiz",
      "items": [
       {
@@ -623,6 +767,53 @@ TRACK.modules.push({
     {
      "type": "text",
      "text": "Frameworks change; good judgement does not. The guiding principles are seven short pieces of advice that apply to any service decision, at any scale, whether you run a five-person IT team at a clinic or a 2,000-person technology division at a telecom operator. They are not steps. They are lenses: before you commit to a decision, look at it through each one."
+    },
+    {
+     "type": "timeline",
+     "title": "How IT service management practice has evolved",
+     "items": [
+      {
+       "when": "Late 1980s",
+       "label": "Public-sector origins",
+       "text": "UK government guidance gathers good practice for running IT services; the first ITIL® books appear."
+      },
+      {
+       "when": "2000–2007",
+       "label": "Process era",
+       "text": "Versions 2 and 3 popularise process-based and lifecycle-based service management."
+      },
+      {
+       "when": "2005",
+       "label": "A certifiable standard",
+       "text": "ISO/IEC 20000 is first published; the current edition of part 1 dates from 2018."
+      },
+      {
+       "when": "2009–2016",
+       "label": "DevOps and SRE",
+       "text": "Practitioner movements show speed and stability can rise together; SRE practices become widely published."
+      },
+      {
+       "when": "2019",
+       "label": "ITIL 4",
+       "text": "A value-system and practice-based model aligned with Agile, Lean and DevOps."
+      },
+      {
+       "when": "2021",
+       "label": "New ownership",
+       "text": "The framework's owner becomes part of PeopleCert."
+      },
+      {
+       "when": "2020s",
+       "label": "Experience, product and AI",
+       "text": "XLAs, product and platform operating models, enterprise service management and AI-assisted operations go mainstream."
+      },
+      {
+       "when": "Today",
+       "label": "Continuing evolution",
+       "text": "The official framework keeps evolving after ITIL 4; check the owner's current publications for what has changed."
+      }
+     ],
+     "caption": "Frameworks are revised roughly once a decade, while the principles beneath them have stayed remarkably stable. Dates for movements such as DevOps are approximate because they spread gradually."
     },
     {
      "type": "framework",
@@ -848,6 +1039,17 @@ TRACK.modules.push({
      "prompt": "Which of the seven principles does your organisation apply least? Describe one recent decision that would have turned out better if it had been applied."
     },
     {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "The seven principles are lenses for judgement, not steps to follow in order.",
+      "Start where you are: measure the current state before replacing anything.",
+      "Optimise before you automate, or you automate the waste.",
+      "When principles pull in different directions, make the tension and your resolution explicit.",
+      "Frameworks change over time; principle-based judgement transfers to whatever comes next."
+     ]
+    },
+    {
      "type": "quiz",
      "items": [
       {
@@ -925,26 +1127,24 @@ TRACK.modules.push({
      "text": "Governance answers a simple question: **who decides, on what basis, and how do we know it is working?** In a company the governing body is usually the board; in a public university, the syndicate or council; in a government hospital, a management committee under a ministry. Governance is not management. Managers plan and run work; governance sets direction, approves the boundaries within which managers act, and checks that results match intentions."
     },
     {
-     "type": "flow",
+     "type": "cycle",
      "title": "The governance cycle",
+     "center": "Governing body",
      "items": [
       {
        "label": "Evaluate",
-       "text": "Assess the organisation, its strategy, risks and stakeholder needs"
+       "text": "Assess the organisation, its strategy, risks and stakeholder needs."
       },
       {
        "label": "Direct",
-       "text": "Set priorities, policies, risk appetite and accountability"
+       "text": "Set priorities, policies, risk appetite and accountability."
       },
       {
        "label": "Monitor",
-       "text": "Check performance and conformance against what was directed"
-      },
-      {
-       "label": "Evaluate again",
-       "text": "Use what was learned to adjust direction"
+       "text": "Check performance and conformance against what was directed, then evaluate again."
       }
-     ]
+     ],
+     "caption": "Governance never finishes: what monitoring reveals feeds the next evaluation. A board that only directs, and never monitors, is governing blind."
     },
     {
      "type": "table",
@@ -1028,6 +1228,42 @@ TRACK.modules.push({
        "text": "Embed the change, celebrate success, and feed lessons into the next cycle."
       }
      ]
+    },
+    {
+     "type": "cycle",
+     "title": "The continual improvement model as a loop",
+     "center": "Continual improvement",
+     "items": [
+      {
+       "label": "Vision",
+       "text": "Why are we improving, and what value should it create?"
+      },
+      {
+       "label": "Current state",
+       "text": "Baseline with data before changing anything."
+      },
+      {
+       "label": "Target state",
+       "text": "A measurable goal and the gap to close."
+      },
+      {
+       "label": "Plan the route",
+       "text": "Options, experiments and owners."
+      },
+      {
+       "label": "Take action",
+       "text": "Deliver in small, safe iterations."
+      },
+      {
+       "label": "Check results",
+       "text": "Did the measures move? If not, learn why."
+      },
+      {
+       "label": "Keep momentum",
+       "text": "Embed the change, recognise it and pick the next gap."
+      }
+     ],
+     "caption": "The last step leads straight back to the first. Skipping the baseline (step 2) is the most common reason improvement claims cannot be proven later."
     },
     {
      "type": "keypoints",
@@ -1138,6 +1374,17 @@ TRACK.modules.push({
     {
      "type": "reflection",
      "prompt": "Who in your organisation can approve a risky change during a peak business period? Is that authority written down, and does the governing body know?"
+    },
+    {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "Governance evaluates, directs and monitors; management plans and runs the work.",
+      "Clear risk appetite and delegated authority make good governance a source of speed.",
+      "The continual improvement model is a loop: baseline first, measure benefits after.",
+      "Keep one visible improvement register and reserve capacity for improvement work.",
+      "After major failures, governance should fix decision rights and policy, not just blame."
+     ]
     },
     {
      "type": "quiz",
@@ -1256,6 +1503,61 @@ TRACK.modules.push({
        "text": "How the parts of the organisation work together: the sequence of activities, handovers and controls that turn demand into value."
       }
      ]
+    },
+    {
+     "type": "tree",
+     "title": "Four lenses on one service: hospital e-prescription",
+     "root": {
+      "label": "E-prescription service",
+      "text": "One service, four dimensions, external PESTLE pressures on all of them",
+      "children": [
+       {
+        "label": "Organisations and people",
+        "children": [
+         {
+          "label": "Named service owner"
+         },
+         {
+          "label": "Night-shift training"
+         }
+        ]
+       },
+       {
+        "label": "Information and technology",
+        "children": [
+         {
+          "label": "Accurate drug formulary"
+         },
+         {
+          "label": "Ward Wi-Fi coverage"
+         }
+        ]
+       },
+       {
+        "label": "Partners and suppliers",
+        "children": [
+         {
+          "label": "24/7 vendor support"
+         },
+         {
+          "label": "Exit and data terms"
+         }
+        ]
+       },
+       {
+        "label": "Value streams and processes",
+        "children": [
+         {
+          "label": "Doctor-to-patient flow"
+         },
+         {
+          "label": "Downtime fallback"
+         }
+        ]
+       }
+      ]
+     },
+     "caption": "Each branch is a question the whole team must answer before go-live, not a department's private concern. A gap in any one branch can sink a technically perfect system."
     },
     {
      "type": "table",
@@ -1439,6 +1741,17 @@ TRACK.modules.push({
     {
      "type": "reflection",
      "prompt": "Think of a recent change that disappointed its users. Which of the four dimensions was neglected, and what would have exposed the gap earlier?"
+    },
+    {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "Every service, practice and change must be examined through all four dimensions at once.",
+      "Dimensions are lenses on the same service, not a way to divide work between departments.",
+      "PESTLE factors such as data localisation law or currency swings shape every dimension.",
+      "Most failed launches neglected people, suppliers or processes rather than technology.",
+      "A four-dimensions review before go-live finds gaps while they are still cheap to fix."
+     ]
     },
     {
      "type": "quiz",
@@ -1636,7 +1949,8 @@ TRACK.modules.push({
       "Hosting: on-premises, private cloud, public cloud or hybrid, considering data residency and latency.",
       "Integration approach: point-to-point links versus APIs and event streams.",
       "Lifecycle and obsolescence: supported versions, upgrade cadence, end-of-life risk.",
-      "Security and resilience built in, not bolted on."
+      "Security and resilience built in, not bolted on.",
+      "Sustainability: energy use, device life extension and responsible e-waste disposal, increasingly reported to boards and regulators."
      ],
      "title": "Technology decisions that shape services for years"
     },
@@ -1661,6 +1975,43 @@ TRACK.modules.push({
        ]
       }
      ]
+    },
+    {
+     "type": "matrix",
+     "title": "Where to standardise and where to allow variety",
+     "x": "How much the capability differentiates the business",
+     "y": "Uncertainty and need for fast learning",
+     "quadrants": [
+      {
+       "title": "Try cheaply, keep exit open",
+       "items": [
+        "Short pilots on subscription services",
+        "Avoid long contracts"
+       ]
+      },
+      {
+       "title": "Experiment and build",
+       "items": [
+        "Product teams with freedom inside guardrails",
+        "Example: new digital lending journey"
+       ]
+      },
+      {
+       "title": "Standardise and buy",
+       "items": [
+        "Email, laptops, identity, payroll",
+        "One platform, lowest total cost"
+       ]
+      },
+      {
+       "title": "Own and harden",
+       "items": [
+        "Core platforms run with strong controls",
+        "Example: core banking ledger"
+       ]
+      }
+     ],
+     "caption": "Standardisation wins at the bottom-left; variety pays only where differentiation or learning speed is high. Most estates need all four quadrants, deliberately chosen."
     },
     {
      "type": "scenario",
@@ -1747,6 +2098,17 @@ TRACK.modules.push({
     {
      "type": "reflection",
      "prompt": "How does your team react when someone reports a mistake? What one leadership behaviour would move it closer to a performance-oriented culture?"
+    },
+    {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "Structure, roles, competence, culture and capacity decide whether new ways of working stick.",
+      "Performance-oriented cultures seek bad news early; blame cultures hide it until it becomes an outage.",
+      "Assess information for accuracy, completeness, timeliness, accessibility and protection.",
+      "Technology decisions lock in cost, risk and sustainability impact for years; make them deliberately.",
+      "Standardise commodities; allow governed variety where differentiation or learning speed matters."
+     ]
     },
     {
      "type": "quiz",
@@ -1938,34 +2300,115 @@ TRACK.modules.push({
      "text": "When several suppliers deliver parts of one service, someone must integrate them: coordinate incidents that cross supplier boundaries, run a single change calendar, consolidate reporting and settle disputes about who owns a problem. This **service integration** role can be kept in-house, given to a lead supplier or given to a specialist integrator. Keeping it in-house is usually best for organisations whose services are strategic, because integration is where accountability for the end-to-end result lives."
     },
     {
-     "type": "layers",
-     "title": "A multi-supplier operating model",
-     "items": [
+     "type": "topology",
+     "title": "A multi-supplier operating model with retained integration",
+     "nodes": [
       {
-       "label": "Customer organisation",
-       "parts": [
-        "Strategy and governance",
-        "Service ownership and budget"
-       ]
+       "id": "cust",
+       "kind": "team",
+       "label": "Customer",
+       "sub": "Strategy, budget, service ownership",
+       "x": 3,
+       "y": 0
       },
       {
-       "label": "Service integration",
-       "parts": [
-        "End-to-end incident and problem coordination",
-        "Single change calendar",
-        "Consolidated performance reporting"
-       ]
+       "id": "int",
+       "kind": "process",
+       "label": "Integrator",
+       "sub": "End-to-end incident, change, reporting",
+       "x": 3,
+       "y": 2
+      },
+      {
+       "id": "cloud",
+       "kind": "cloud",
+       "label": "Cloud hosting",
+       "sub": "Supplier A",
+       "x": 0,
+       "y": 4
+      },
+      {
+       "id": "net",
+       "kind": "router",
+       "label": "Network",
+       "sub": "Supplier B",
+       "x": 2,
+       "y": 4
+      },
+      {
+       "id": "app",
+       "kind": "server",
+       "label": "App support",
+       "sub": "Supplier C",
+       "x": 4,
+       "y": 4
+      },
+      {
+       "id": "desk",
+       "kind": "team",
+       "label": "Desk and field",
+       "sub": "Supplier D",
+       "x": 6,
+       "y": 4
+      },
+      {
+       "id": "users",
+       "kind": "user",
+       "label": "Users",
+       "sub": "One point of contact",
+       "x": 6,
+       "y": 6
+      }
+     ],
+     "links": [
+      {
+       "a": "cust",
+       "b": "int",
+       "label": "direction"
+      },
+      {
+       "a": "int",
+       "b": "cloud",
+       "label": "contract"
+      },
+      {
+       "a": "int",
+       "b": "net"
+      },
+      {
+       "a": "int",
+       "b": "app"
+      },
+      {
+       "a": "int",
+       "b": "desk",
+       "label": "contract"
+      },
+      {
+       "a": "desk",
+       "b": "users",
+       "label": "contacts"
+      }
+     ],
+     "zones": [
+      {
+       "label": "Retained by the customer",
+       "x": 0,
+       "y": 0,
+       "w": 7,
+       "h": 3,
+       "tone": "accent"
       },
       {
        "label": "Suppliers",
-       "parts": [
-        "Cloud hosting",
-        "Network and telecom",
-        "Application support",
-        "Service desk and field support"
-       ]
+       "x": 0,
+       "y": 4,
+       "w": 7,
+       "h": 1,
+       "tone": "neutral"
       }
-     ]
+     ],
+     "caption": "Every supplier connects to one integrator, not to each other through the customer. Keeping integration in the retained zone keeps accountability for the end-to-end result with the customer."
     },
     {
      "type": "scenario",
@@ -2063,6 +2506,17 @@ TRACK.modules.push({
     {
      "type": "reflection",
      "prompt": "List your three most critical suppliers. For each, could you exit within six months if you had to? What would stop you?"
+    },
+    {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "Choose sourcing models by strategic focus, culture, skills scarcity, total cost and exit options.",
+      "Measure suppliers on end-to-end outcomes to avoid green-on-the-outside 'watermelon' reports.",
+      "Strategic suppliers need joint governance and shared roadmaps; commodity suppliers need clear contracts.",
+      "Someone must integrate multiple suppliers; for strategic services that is usually the customer.",
+      "Plan the exit before you sign: data return, knowledge transfer and transition costs."
+     ]
     },
     {
      "type": "quiz",
@@ -2302,6 +2756,33 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "chart",
+     "kind": "bar",
+     "title": "Where 19 working days go: sales-rep onboarding",
+     "labels": [
+      "HR request to IT",
+      "Laptop allocation",
+      "Security image",
+      "Access approvals",
+      "Induction and set-up"
+     ],
+     "series": [
+      {
+       "name": "Waiting (working days)",
+       "values": [
+        2,
+        3,
+        5,
+        6,
+        3
+       ]
+      }
+     ],
+     "unit": " d",
+     "yLabel": "Working days waiting",
+     "caption": "Illustrative split of the onboarding case that follows: about 19 days of waiting against only 6 hours of actual work. The tallest bars, approvals and imaging, are where redesign pays most."
+    },
+    {
      "type": "case",
      "title": "Onboarding at a pharmaceutical company",
      "context": "A pharmaceutical manufacturer in Gazipur takes 19 working days to make a new sales representative productive. Mapping shows 11 steps across HR, IT, security and the sales office. Actual work totals 6 hours. Laptops wait 5 days for a security image, access requests wait for three separate approvals, and HR sends start dates by email that IT re-enters into its tool, often wrongly.",
@@ -2405,6 +2886,17 @@ TRACK.modules.push({
     {
      "type": "reflection",
      "prompt": "Choose one value stream you are part of. Where does it really start and end from the consumer's point of view, and where does your team's part begin and end?"
+    },
+    {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "The value chain has six activities; value streams combine them for a specific type of demand.",
+      "A value stream starts when demand arrives and ends when the consumer realises value.",
+      "Flow efficiency is touch time divided by lead time; low values mean waiting dominates.",
+      "Start mapping with a slow, high-volume stream that customers complain about.",
+      "Fix the biggest waits and rework loops first; working faster inside a step changes little."
+     ]
     },
     {
      "type": "quiz",
@@ -2602,6 +3094,128 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "topology",
+     "title": "An omnichannel desk with one record and a route to a human",
+     "nodes": [
+      {
+       "id": "res",
+       "kind": "team",
+       "label": "Resolver teams",
+       "sub": "L2/L3 and suppliers",
+       "x": 3,
+       "y": 0
+      },
+      {
+       "id": "agents",
+       "kind": "team",
+       "label": "Desk agents",
+       "sub": "Level 1",
+       "x": 0,
+       "y": 2
+      },
+      {
+       "id": "plat",
+       "kind": "server",
+       "label": "Service platform",
+       "sub": "One record per contact",
+       "x": 3,
+       "y": 2
+      },
+      {
+       "id": "kb",
+       "kind": "doc",
+       "label": "Knowledge base",
+       "sub": "Approved articles",
+       "x": 6,
+       "y": 2
+      },
+      {
+       "id": "phone",
+       "kind": "phone",
+       "label": "Phone",
+       "x": 1,
+       "y": 4
+      },
+      {
+       "id": "va",
+       "kind": "model",
+       "label": "Virtual agent",
+       "sub": "Chat, Bangla and English",
+       "x": 3,
+       "y": 4
+      },
+      {
+       "id": "portal",
+       "kind": "laptop",
+       "label": "Self-service",
+       "sub": "Portal and app",
+       "x": 5,
+       "y": 4
+      },
+      {
+       "id": "users",
+       "kind": "user",
+       "label": "Users",
+       "x": 3,
+       "y": 6
+      }
+     ],
+     "links": [
+      {
+       "a": "users",
+       "b": "phone"
+      },
+      {
+       "a": "users",
+       "b": "va"
+      },
+      {
+       "a": "users",
+       "b": "portal"
+      },
+      {
+       "a": "phone",
+       "b": "agents"
+      },
+      {
+       "a": "va",
+       "b": "agents",
+       "label": "handoff",
+       "style": "dashed"
+      },
+      {
+       "a": "va",
+       "b": "plat"
+      },
+      {
+       "a": "portal",
+       "b": "plat"
+      },
+      {
+       "a": "agents",
+       "b": "plat",
+       "label": "logs"
+      },
+      {
+       "a": "kb",
+       "b": "plat",
+       "label": "articles"
+      },
+      {
+       "a": "va",
+       "b": "kb",
+       "label": "grounding",
+       "style": "dashed"
+      },
+      {
+       "a": "plat",
+       "b": "res",
+       "label": "routing"
+      }
+     ],
+     "caption": "Every channel writes to the same record, so nothing is lost between channels. The virtual agent answers from approved knowledge and always offers a handoff to a person."
+    },
+    {
      "type": "callout",
      "kind": "example",
      "text": "A hospital group with sites in Dhaka and Chattogram runs a central desk for phone, chat and portal 24/7, plus 'floor walkers' on each clinical site during day shifts. Floor walkers handle device issues on wards and capture knowledge; the central desk handles everything else and owns the record. Clinicians get human help where they work, and the group keeps one source of truth.",
@@ -2634,6 +3248,60 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "chart",
+     "kind": "line",
+     "title": "Demand versus capacity across a desk's day",
+     "labels": [
+      "07",
+      "08",
+      "09",
+      "10",
+      "11",
+      "12",
+      "13",
+      "14",
+      "15",
+      "16",
+      "17"
+     ],
+     "series": [
+      {
+       "name": "Contacts offered per hour",
+       "values": [
+        80,
+        420,
+        1150,
+        760,
+        620,
+        540,
+        480,
+        560,
+        520,
+        450,
+        300
+       ]
+      },
+      {
+       "name": "Contacts agents can answer per hour",
+       "values": [
+        300,
+        600,
+        700,
+        700,
+        700,
+        600,
+        600,
+        700,
+        700,
+        600,
+        400
+       ]
+      }
+     ],
+     "yLabel": "Contacts per hour",
+     "caption": "Illustrative numbers. When demand rises above capacity at 09:00, users abandon; the cure is shifting that peak's simple contacts left or moving capacity, not a faster average."
+    },
+    {
      "type": "callout",
      "kind": "warning",
      "text": "A desk measured mainly on average handling time will rush users off the phone and transfer problems it could have solved. A desk measured mainly on ticket closure will close tickets before users confirm the fix. Balance speed with resolution quality, user satisfaction and the effort users had to make.",
@@ -2642,7 +3310,7 @@ TRACK.modules.push({
     {
      "type": "keypoints",
      "items": [
-      "Level 0: users solve the issue themselves through knowledge and self-service automation.",
+      "Level 0: users solve the issue themselves through knowledge, self-service automation and virtual agents grounded in approved articles.",
       "Level 1: desk agents solve it with good knowledge and appropriate access rights.",
       "Level 2/3: specialists are used only for genuinely complex work.",
       "Each shift left lowers cost and shortens resolution time, but only if knowledge is accurate and users trust it."
@@ -2712,6 +3380,17 @@ TRACK.modules.push({
     {
      "type": "reflection",
      "prompt": "If your users rated your service desk on effort rather than speed, how would it score? What causes them the most effort today?"
+    },
+    {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "The service desk is the single point of contact and shapes users' view of all of IT.",
+      "Design channels for the user and the issue; every channel should write to one record.",
+      "Shift-left moves resolution towards users, but only works with accurate, trusted knowledge.",
+      "Balance speed measures with first-contact resolution, effort and satisfaction.",
+      "Abandonment peaks reveal demand above capacity at specific times, not general slowness."
+     ]
     },
     {
      "type": "quiz",
@@ -2851,6 +3530,43 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "matrix",
+     "title": "Impact × urgency at a glance (two-level view)",
+     "x": "Urgency: how fast the business is hurt",
+     "y": "Impact: users, revenue, safety, reputation",
+     "quadrants": [
+      {
+       "title": "P2–P3: fix today, plan carefully",
+       "items": [
+        "Many affected, time margin exists",
+        "e.g. monthly report job failed, due Friday"
+       ]
+      },
+      {
+       "title": "P1: critical",
+       "items": [
+        "Critical service down for many now",
+        "Declare a major incident and swarm"
+       ]
+      },
+      {
+       "title": "P4: low",
+       "items": [
+        "One user, workaround available",
+        "Handle in normal queue order"
+       ]
+      },
+      {
+       "title": "P3: medium, time-boxed",
+       "items": [
+        "Few users, but time-critical",
+        "e.g. one laptop before a board meeting"
+       ]
+      }
+     ],
+     "caption": "This collapses the three-level table above into two levels. Priority follows business consequence and time pressure together; technical drama alone never makes a P1."
+    },
+    {
      "type": "callout",
      "kind": "insight",
      "text": "A failed server in a test environment is technically dramatic and business-trivial. A small configuration error that stops the hospital pharmacy printing labels is technically minor and clinically urgent. Define impact using service and business consequences: users affected, revenue, safety, regulatory exposure and reputation.",
@@ -2944,6 +3660,73 @@ TRACK.modules.push({
        "text": "Close the incident and open a problem record with the timeline and evidence."
       }
      ]
+    },
+    {
+     "type": "sequence",
+     "title": "Escalating a major incident: the first 30 minutes",
+     "actors": [
+      "Monitoring",
+      "Service desk",
+      "On-call engineer",
+      "Incident commander",
+      "Comms lead",
+      "Stakeholders"
+     ],
+     "steps": [
+      {
+       "from": 0,
+       "to": 1,
+       "label": "Alert: payment errors above 5%"
+      },
+      {
+       "from": 1,
+       "to": 2,
+       "label": "Page on-call, P1 suspected"
+      },
+      {
+       "from": 2,
+       "to": 1,
+       "label": "Confirmed: wide customer impact",
+       "reply": true
+      },
+      {
+       "from": 1,
+       "to": 3,
+       "label": "Declare major incident"
+      },
+      {
+       "from": 3,
+       "to": 4,
+       "label": "Own updates every 30 minutes"
+      },
+      {
+       "from": 4,
+       "to": 5,
+       "label": "Impact, actions, next update time"
+      },
+      {
+       "from": 3,
+       "to": 2,
+       "label": "Roll back the 19:30 change?"
+      },
+      {
+       "from": 2,
+       "to": 3,
+       "label": "Rolled back; success rate recovering",
+       "reply": true
+      },
+      {
+       "from": 4,
+       "to": 5,
+       "label": "Service restored; monitoring closely"
+      },
+      {
+       "from": 3,
+       "to": 3,
+       "label": "Hand over to problem management"
+      }
+     ],
+     "caption": "Roles are assigned before diagnosis is finished, and communication runs on a fixed rhythm in parallel with the technical work. Restoration (step 8) comes before root-cause analysis."
     },
     {
      "type": "formula",
@@ -3070,6 +3853,17 @@ TRACK.modules.push({
      "prompt": "Think of your last major incident. Who was in charge, and did everyone know it within ten minutes? What would you change?"
     },
     {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "Incident management restores service first; diagnosis of causes belongs to problem management.",
+      "Priority combines business impact and urgency, defined in business terms.",
+      "Swarm complex or novel incidents; use tiered escalation for routine ones.",
+      "Major incidents need named roles: commander, technical leads, communications lead and scribe.",
+      "Declare early, update on a fixed rhythm and prefer the fastest safe restoration such as rollback."
+     ]
+    },
+    {
      "type": "quiz",
      "items": [
       {
@@ -3191,6 +3985,38 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "cycle",
+     "title": "The incident and problem loop",
+     "center": "Fewer repeat incidents",
+     "items": [
+      {
+       "label": "Incidents occur",
+       "text": "Users or monitoring report failures; service is restored."
+      },
+      {
+       "label": "Trend spotted",
+       "text": "Repeats, major incidents or risks trigger a problem record."
+      },
+      {
+       "label": "Problem analysed",
+       "text": "Causes and contributing factors are investigated."
+      },
+      {
+       "label": "Known error logged",
+       "text": "Workaround published to the desk and knowledge base."
+      },
+      {
+       "label": "Fix via change",
+       "text": "Error control raises a change for the permanent fix."
+      },
+      {
+       "label": "Verify outcome",
+       "text": "Incident data confirms the fix worked, or the loop runs again."
+      }
+     ],
+     "caption": "Incident management keeps the business running while this loop removes causes. Without step 6, organisations close problems that never actually stopped recurring."
+    },
+    {
      "type": "compare",
      "title": "Reactive versus proactive problem management",
      "columns": [
@@ -3244,6 +4070,56 @@ TRACK.modules.push({
        "text": "Work backwards from the failure through logical AND/OR conditions. Useful for safety-critical systems."
       }
      ]
+    },
+    {
+     "type": "tree",
+     "title": "Fishbone view: why ward label printers fail at 07:10",
+     "root": {
+      "label": "Label printers fail every morning",
+      "children": [
+       {
+        "label": "People",
+        "children": [
+         {
+          "label": "No owner for driver testing"
+         }
+        ]
+       },
+       {
+        "label": "Process",
+        "children": [
+         {
+          "label": "Drivers outside change control"
+         }
+        ]
+       },
+       {
+        "label": "Technology",
+        "children": [
+         {
+          "label": "Driver leaks memory per label"
+         }
+        ]
+       },
+       {
+        "label": "Supplier",
+        "children": [
+         {
+          "label": "Auto-update pushed untested"
+         }
+        ]
+       },
+       {
+        "label": "Environment",
+        "children": [
+         {
+          "label": "Print peak at shift start"
+         }
+        ]
+       }
+      ]
+     },
+     "caption": "Grouping candidate causes by category shows several contributing factors at once. The five-whys chain below follows only one of these branches."
     },
     {
      "type": "callout",
@@ -3381,6 +4257,17 @@ TRACK.modules.push({
     {
      "type": "reflection",
      "prompt": "Which incident does your organisation resolve every week without ever asking why it keeps happening? What would it take to open a problem record for it?"
+    },
+    {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "A problem is a cause or potential cause of incidents; a known error has been analysed but not yet fixed.",
+      "Problem management runs through identification, problem control and error control.",
+      "Use proactive triggers such as vendor notices and near misses, not only past incidents.",
+      "Look for several contributing factors rather than one root cause.",
+      "Prioritise problems by incident cost, risk and fix effort; accept some with good workarounds, and review them."
+     ]
     },
     {
      "type": "quiz",
@@ -3540,12 +4427,117 @@ TRACK.modules.push({
        "title": "Observability",
        "items": [
         "Lets you ask new questions of the system",
-        "Metrics, logs and traces with rich context",
+        "Metrics, logs and traces with rich context, increasingly collected through open standards such as OpenTelemetry",
         "Helps you find why something is wrong",
         "Essential for distributed, cloud-native services"
        ]
       }
      ]
+    },
+    {
+     "type": "topology",
+     "title": "A telemetry pipeline from signals to action",
+     "nodes": [
+      {
+       "id": "syn",
+       "kind": "monitor",
+       "label": "Synthetic checks",
+       "sub": "Scripted login and payment",
+       "x": 0,
+       "y": 0
+      },
+      {
+       "id": "svc",
+       "kind": "container",
+       "label": "Services",
+       "sub": "Apps, APIs, queues",
+       "x": 0,
+       "y": 2
+      },
+      {
+       "id": "inf",
+       "kind": "server",
+       "label": "Infrastructure",
+       "sub": "Hosts, network, cloud",
+       "x": 0,
+       "y": 4
+      },
+      {
+       "id": "col",
+       "kind": "process",
+       "label": "Collectors",
+       "sub": "Open telemetry standard",
+       "x": 2,
+       "y": 2
+      },
+      {
+       "id": "store",
+       "kind": "db",
+       "label": "Telemetry store",
+       "sub": "Metrics, logs, traces",
+       "x": 4,
+       "y": 2
+      },
+      {
+       "id": "cor",
+       "kind": "model",
+       "label": "Correlation",
+       "sub": "Dedupe, anomaly detection",
+       "x": 6,
+       "y": 2
+      },
+      {
+       "id": "itsm",
+       "kind": "server",
+       "label": "ITSM platform",
+       "sub": "Incident record, CMDB",
+       "x": 6,
+       "y": 0
+      },
+      {
+       "id": "oncall",
+       "kind": "team",
+       "label": "On-call engineer",
+       "sub": "Paged once per problem",
+       "x": 6,
+       "y": 4
+      }
+     ],
+     "links": [
+      {
+       "a": "syn",
+       "b": "col"
+      },
+      {
+       "a": "svc",
+       "b": "col"
+      },
+      {
+       "a": "inf",
+       "b": "col"
+      },
+      {
+       "a": "col",
+       "b": "store",
+       "label": "telemetry"
+      },
+      {
+       "a": "store",
+       "b": "cor",
+       "label": "events"
+      },
+      {
+       "a": "cor",
+       "b": "itsm",
+       "label": "incident"
+      },
+      {
+       "a": "cor",
+       "b": "oncall",
+       "label": "page"
+      }
+     ],
+     "caption": "Signals from users, services and infrastructure flow through one pipeline. Correlation sits before alerting, so engineers are paged once per problem rather than once per symptom."
     },
     {
      "type": "framework",
@@ -3626,6 +4618,48 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "chart",
+     "kind": "line",
+     "title": "Six weeks of alert noise reduction",
+     "labels": [
+      "Week 0",
+      "Week 1",
+      "Week 2",
+      "Week 3",
+      "Week 4",
+      "Week 5",
+      "Week 6"
+     ],
+     "series": [
+      {
+       "name": "Alerts per day",
+       "values": [
+        14000,
+        13500,
+        8200,
+        5600,
+        2100,
+        1400,
+        900
+       ]
+      },
+      {
+       "name": "Actionable alerts per day",
+       "values": [
+        300,
+        300,
+        290,
+        300,
+        280,
+        290,
+        280
+       ]
+      }
+     ],
+     "yLabel": "Alerts per day",
+     "caption": "Illustrative numbers. Total alerts fall sharply while actionable alerts stay roughly flat: the work removed noise, not signal."
+    },
+    {
      "type": "scenario",
      "title": "A dashboard that stayed green",
      "situation": "A hospital's patient-portal dashboard showed all servers, databases and network links green, yet patients could not book appointments for three hours because an external SMS verification provider was failing. What monitoring change would have detected this fastest?",
@@ -3688,6 +4722,17 @@ TRACK.modules.push({
     {
      "type": "reflection",
      "prompt": "What percentage of alerts in your environment lead to an action? How would you find out within a week?"
+    },
+    {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "Events are informational, warnings or exceptions; each class needs a different response.",
+      "Monitor in layers, starting with what users experience, including third-party dependencies.",
+      "The golden signals (latency, traffic, errors, saturation) suit almost any service.",
+      "Observability lets teams ask new questions of distributed systems using metrics, logs and traces.",
+      "Every page should be actionable: correlate, deduplicate and tune before adding AI on top."
+     ]
     },
     {
      "type": "quiz",
@@ -3823,30 +4868,36 @@ TRACK.modules.push({
      ]
     },
     {
-     "type": "flow",
+     "type": "text",
+     "text": "The approach below is often called **knowledge-centred service**: knowledge is captured and improved as part of resolving work, by the people doing the work. AI assistants can now draft articles from resolved tickets and suggest updates to stale ones, which removes much of the writing effort. Keep a knowledgeable person reviewing before publication, because a confident but wrong article spreads errors to every user and bot that reuses it."
+    },
+    {
+     "type": "cycle",
      "title": "Capture-as-you-solve knowledge loop",
+     "center": "Knowledge-centred service",
      "items": [
       {
        "label": "Search",
-       "text": "Search the knowledge base at the start of every interaction"
+       "text": "Search the knowledge base at the start of every interaction."
       },
       {
        "label": "Reuse",
-       "text": "If an article helps, link it to the ticket"
+       "text": "If an article helps, link it to the ticket."
       },
       {
        "label": "Improve",
-       "text": "If it is wrong or incomplete, flag or fix it now"
+       "text": "If it is wrong or incomplete, flag or fix it now."
       },
       {
        "label": "Create",
-       "text": "If nothing exists, draft an article in the user's words"
+       "text": "If nothing exists, draft an article in the user's words."
       },
       {
-       "label": "Publish & evolve",
-       "text": "Review, publish and keep improving with use"
+       "label": "Publish and evolve",
+       "text": "Review, publish and keep improving with use; then the next search finds it."
       }
-     ]
+     ],
+     "caption": "Knowledge improves as a by-product of everyday work, not through a separate documentation project. Each pass through the loop makes the next search more likely to succeed."
     },
     {
      "type": "callout",
@@ -3975,6 +5026,17 @@ TRACK.modules.push({
      "prompt": "If your most knowledgeable colleague left tomorrow, which service would suffer first? What is one practical step you could take this month?"
     },
     {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "Knowledge management makes the right knowledge available when and where it is needed.",
+      "Tacit knowledge moves through mentoring and shadowing; explicit knowledge through searchable articles.",
+      "Capture and improve knowledge while solving issues, in the user's own words.",
+      "AI can draft and refresh articles, but people must review what gets published.",
+      "Track link rate, reuse and self-service success, and check that users are not simply giving up."
+     ]
+    },
+    {
      "type": "quiz",
      "items": [
       {
@@ -4020,6 +5082,17 @@ TRACK.modules.push({
        ],
        "answer": 0,
        "explain": "Sessions ending without a ticket can include users who gave up; the measure must be read with care."
+      },
+      {
+       "q": "An AI assistant drafts knowledge articles from resolved tickets. Which publishing control is most appropriate?",
+       "options": [
+        "Publish automatically so the base stays current",
+        "A knowledgeable person reviews before publishing",
+        "Publish only drafts above a minimum word count",
+        "Let users remove articles after they cause errors"
+       ],
+       "answer": 1,
+       "explain": "AI removes most of the writing effort, but a wrong article is reused by every agent and bot. Review before publishing keeps accuracy; word counts and after-the-fact removal do not prevent harm."
       }
      ]
     }
@@ -4120,6 +5193,43 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "matrix",
+     "title": "Choosing the path for a type of change",
+     "x": "How often this type of change happens",
+     "y": "Risk if it fails",
+     "quadrants": [
+      {
+       "title": "Change authority review",
+       "items": [
+        "Core platform upgrades, data migrations",
+        "Rehearsal, rollback plan, business sign-off"
+       ]
+      },
+      {
+       "title": "Redesign to lower the risk",
+       "items": [
+        "Smaller batches and automated tests",
+        "Progressive rollout until it moves down"
+       ]
+      },
+      {
+       "title": "Peer review",
+       "items": [
+        "Low-risk normal changes",
+        "Automated checks plus one colleague"
+       ]
+      },
+      {
+       "title": "Standard change",
+       "items": [
+        "Pre-authorise the model once",
+        "Automate it end to end"
+       ]
+      }
+     ],
+     "caption": "The bottom-right is where most volume lives, so making it standard frees the change authority for the top-left. Frequent risky changes are a design problem, not an approval problem."
+    },
+    {
      "type": "keypoints",
      "items": [
       "Blast radius: which services and users could be affected if it fails?",
@@ -4192,6 +5302,63 @@ TRACK.modules.push({
        "text": "Track lead time and failure rate together; adjust models when either worsens."
       }
      ]
+    },
+    {
+     "type": "sequence",
+     "title": "A risk-based path for a normal change",
+     "actors": [
+      "Engineer",
+      "Pipeline",
+      "Policy checks",
+      "Change authority",
+      "Production"
+     ],
+     "steps": [
+      {
+       "from": 0,
+       "to": 1,
+       "label": "Merge peer-reviewed change"
+      },
+      {
+       "from": 1,
+       "to": 1,
+       "label": "Build, test, security scan"
+      },
+      {
+       "from": 1,
+       "to": 2,
+       "label": "Evidence and risk score"
+      },
+      {
+       "from": 2,
+       "to": 1,
+       "label": "If low risk: auto-approved",
+       "reply": true
+      },
+      {
+       "from": 2,
+       "to": 3,
+       "label": "If high risk: route for review"
+      },
+      {
+       "from": 3,
+       "to": 1,
+       "label": "Approved, outside peak hours",
+       "reply": true
+      },
+      {
+       "from": 1,
+       "to": 4,
+       "label": "Progressive deploy with health gates"
+      },
+      {
+       "from": 4,
+       "to": 1,
+       "label": "Healthy; record updated automatically",
+       "reply": true
+      }
+     ],
+     "caption": "Only high-risk changes reach a human authority (steps 5 and 6); everything else is approved by policy using evidence the pipeline already holds. The change record is written by the system, not by tired engineers afterwards."
     },
     {
      "type": "scenario",
@@ -4295,6 +5462,17 @@ TRACK.modules.push({
     {
      "type": "reflection",
      "prompt": "Look at last month's changes. What share could safely have been standard changes? What stops them from being standard today?"
+    },
+    {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "Change enablement maximises successful changes; it is not a committee that says no.",
+      "Standard, normal and emergency changes each need a different path and authority.",
+      "Match authority to risk, and move evidence collection into the pipeline.",
+      "Heavy external approval slows delivery without reliably reducing failure; small, tested, reversible changes do.",
+      "Track change failure rate and lead time together, so neither is improved at the other's expense."
+     ]
     },
     {
      "type": "quiz",
@@ -4440,6 +5618,94 @@ TRACK.modules.push({
      ]
     },
     {
+     "type": "topology",
+     "title": "A canary release behind a load balancer",
+     "nodes": [
+      {
+       "id": "pipe",
+       "kind": "process",
+       "label": "Pipeline",
+       "sub": "Rollout controller",
+       "x": 0,
+       "y": 0
+      },
+      {
+       "id": "gate",
+       "kind": "monitor",
+       "label": "Health gate",
+       "sub": "Error rate, p95 latency vs SLO",
+       "x": 6,
+       "y": 0
+      },
+      {
+       "id": "blue",
+       "kind": "container",
+       "label": "v2.4.0 pool",
+       "sub": "Current version",
+       "x": 1,
+       "y": 2
+      },
+      {
+       "id": "green",
+       "kind": "container",
+       "label": "v2.4.1 pool",
+       "sub": "Canary",
+       "x": 5,
+       "y": 2
+      },
+      {
+       "id": "lb",
+       "kind": "lb",
+       "label": "Load balancer",
+       "sub": "Weighted routing",
+       "x": 3,
+       "y": 4
+      },
+      {
+       "id": "users",
+       "kind": "user",
+       "label": "Customers",
+       "x": 3,
+       "y": 6
+      }
+     ],
+     "links": [
+      {
+       "a": "users",
+       "b": "lb"
+      },
+      {
+       "a": "lb",
+       "b": "blue",
+       "label": "95%"
+      },
+      {
+       "a": "lb",
+       "b": "green",
+       "label": "5%"
+      },
+      {
+       "a": "pipe",
+       "b": "green",
+       "label": "deploy",
+       "style": "dashed"
+      },
+      {
+       "a": "green",
+       "b": "gate",
+       "label": "metrics",
+       "style": "dashed"
+      },
+      {
+       "a": "gate",
+       "b": "pipe",
+       "label": "promote or roll back",
+       "style": "dashed"
+      }
+     ],
+     "caption": "The new version receives a small share of real traffic while the health gate compares it with the SLO. The same picture with a 0%/100% switch is a blue-green deployment."
+    },
+    {
      "type": "flow",
      "title": "A modern delivery pipeline",
      "items": [
@@ -4501,6 +5767,33 @@ TRACK.modules.push({
       "deployctl rollout promote payments-api --steps 25,50,100 --pause 10m"
      ],
      "note": "`deployctl` is a generic placeholder for whichever deployment tool your platform uses; the pattern of weights, gates and automatic rollback is what matters."
+    },
+    {
+     "type": "chart",
+     "kind": "line",
+     "title": "Canary traffic share during the rollout above",
+     "labels": [
+      "0 min",
+      "15 min",
+      "25 min",
+      "35 min",
+      "45 min"
+     ],
+     "series": [
+      {
+       "name": "Traffic on v2.4.1",
+       "values": [
+        5,
+        25,
+        50,
+        100,
+        100
+       ]
+      }
+     ],
+     "unit": "%",
+     "yLabel": "Share of traffic",
+     "caption": "Each step up happens only after the gates pass for the agreed window. A failed gate at any point sends the share straight back to zero."
     },
     {
      "type": "scenario",
@@ -4587,6 +5880,17 @@ TRACK.modules.push({
     {
      "type": "reflection",
      "prompt": "In your organisation, is deployment the same moment as release? What would change if you could separate them?"
+    },
+    {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "Deployment moves components into environments; release makes features available to users.",
+      "Feature flags let teams deploy early and release later, to chosen user groups.",
+      "Choose big bang, phased, blue-green or canary by blast radius and ability to switch back.",
+      "Release readiness includes training, desk briefing, monitoring, communication and a rehearsed fallback.",
+      "Automated health gates turn rollback from a debate into a rule."
+     ]
     },
     {
      "type": "quiz",
@@ -4723,6 +6027,67 @@ TRACK.modules.push({
      "title": "Write the catalogue for the person ordering"
     },
     {
+     "type": "callout",
+     "kind": "insight",
+     "title": "Enterprise service management: beyond IT",
+     "text": "The same request models, portal and workflow engine that serve IT requests work equally well for HR, facilities, finance and legal. Many organisations now run **enterprise service management**: one catalogue and one front door for every internal service. Users stop guessing which department owns what, and each department inherits proven practices such as service levels, knowledge and automation."
+    },
+    {
+     "type": "tree",
+     "title": "One enterprise catalogue, many providers",
+     "root": {
+      "label": "Enterprise service catalogue",
+      "text": "One portal, one way to ask",
+      "children": [
+       {
+        "label": "IT",
+        "children": [
+         {
+          "label": "Lab results access"
+         },
+         {
+          "label": "Replacement laptop"
+         }
+        ]
+       },
+       {
+        "label": "HR",
+        "children": [
+         {
+          "label": "Payslip copy"
+         },
+         {
+          "label": "Leave correction"
+         }
+        ]
+       },
+       {
+        "label": "Facilities",
+        "children": [
+         {
+          "label": "Meeting room set-up"
+         },
+         {
+          "label": "Repair request"
+         }
+        ]
+       },
+       {
+        "label": "Finance",
+        "children": [
+         {
+          "label": "New supplier set-up"
+         },
+         {
+          "label": "Expense query"
+         }
+        ]
+       }
+      ]
+     },
+     "caption": "Users see what they can ask for in their own words; which department fulfils it is a back-stage detail. Each leaf is a catalogue entry with its own request model."
+    },
+    {
      "type": "compare",
      "title": "Approval design",
      "columns": [
@@ -4771,6 +6136,58 @@ TRACK.modules.push({
        "text": "Track volume, fulfilment time, failures and satisfaction for each model."
       }
      ]
+    },
+    {
+     "type": "sequence",
+     "title": "A fully automated access request",
+     "actors": [
+      "Nurse",
+      "Portal",
+      "Workflow engine",
+      "Identity system",
+      "Line manager"
+     ],
+     "steps": [
+      {
+       "from": 0,
+       "to": 1,
+       "label": "Get access to lab results"
+      },
+      {
+       "from": 1,
+       "to": 2,
+       "label": "Request plus role from HR data"
+      },
+      {
+       "from": 2,
+       "to": 2,
+       "label": "Role matches pre-approved package"
+      },
+      {
+       "from": 2,
+       "to": 4,
+       "label": "Approval only if outside role",
+       "note": "Not needed this time"
+      },
+      {
+       "from": 2,
+       "to": 3,
+       "label": "Create account, add role group"
+      },
+      {
+       "from": 3,
+       "to": 2,
+       "label": "Done",
+       "reply": true
+      },
+      {
+       "from": 2,
+       "to": 0,
+       "label": "Access ready, with a quick guide",
+       "reply": true
+      }
+     ],
+     "caption": "Role-based packages remove the approval step for the common case, so fulfilment takes minutes. Human approval is kept for requests outside the role, where it actually changes outcomes."
     },
     {
      "type": "formula",
@@ -4882,6 +6299,17 @@ TRACK.modules.push({
      "prompt": "Which request in your organisation needs the most approvals? Do those approvals ever change the outcome?"
     },
     {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "Service requests are normal, expected demand; nothing is broken.",
+      "Write catalogue entries in the requester's language, with time, cost and a single way to order.",
+      "Approvals belong only where risk or cost justifies them; role-based access removes most of them.",
+      "Improve requests in order: standardise, simplify, integrate, then automate.",
+      "Enterprise service management extends the same catalogue and practices to HR, facilities and finance."
+     ]
+    },
+    {
      "type": "quiz",
      "items": [
       {
@@ -4927,6 +6355,17 @@ TRACK.modules.push({
        ],
        "answer": 1,
        "explain": "Optimise before automating: standardise and simplify, then integrate and automate."
+      },
+      {
+       "q": "HR, facilities and IT each run a separate request inbox, and staff often send requests to the wrong one. What is the most effective improvement?",
+       "options": [
+        "Publish each department's inbox address more widely",
+        "One shared catalogue and portal for all departments",
+        "Ask each department to answer requests faster",
+        "Merge the three departments into one team"
+       ],
+       "answer": 1,
+       "explain": "Enterprise service management gives users one front door in their own language while each department fulfils its own requests. Better address lists or faster replies leave the routing problem in place; merging departments is unnecessary."
       }
      ]
     }
@@ -4970,30 +6409,32 @@ TRACK.modules.push({
      ]
     },
     {
-     "type": "flow",
+     "type": "cycle",
      "title": "Asset lifecycle",
+     "center": "IT asset lifecycle",
      "items": [
       {
        "label": "Plan",
-       "text": "Demand, standards, budget"
+       "text": "Demand, standards, budget and refresh dates."
       },
       {
        "label": "Acquire",
-       "text": "Purchase, lease or subscribe"
+       "text": "Purchase, lease or subscribe."
       },
       {
        "label": "Deploy",
-       "text": "Register, configure, assign"
+       "text": "Register, configure and assign."
       },
       {
        "label": "Operate",
-       "text": "Maintain, patch, track usage"
+       "text": "Maintain, patch and track usage."
       },
       {
        "label": "Retire",
-       "text": "Recover, wipe data, dispose or recycle"
+       "text": "Recover, wipe data with certification, then reuse, refurbish or recycle; lessons feed the next plan."
       }
-     ]
+     ],
+     "caption": "The loop closes at retirement: reclaimed devices and licences reduce what the next plan must buy. Extending device life is also one of the cheapest sustainability gains in IT."
     },
     {
      "type": "callout",
@@ -5032,40 +6473,136 @@ TRACK.modules.push({
      ]
     },
     {
-     "type": "layers",
-     "title": "Service model from a configuration view",
-     "items": [
+     "type": "topology",
+     "title": "Service model: what wallet payments depends on",
+     "nodes": [
       {
-       "label": "Business service",
-       "parts": [
-        "Mobile wallet payments"
-       ]
+       "id": "svc",
+       "kind": "process",
+       "label": "Wallet payments",
+       "sub": "Business service",
+       "x": 3,
+       "y": 0
       },
       {
-       "label": "Application services",
-       "parts": [
-        "Payments API",
-        "Customer authentication",
-        "Notification service"
-       ]
+       "id": "api",
+       "kind": "api",
+       "label": "Payments API",
+       "x": 1,
+       "y": 2
       },
       {
-       "label": "Platforms",
-       "parts": [
-        "Container cluster",
-        "Managed database",
-        "Message queue"
-       ]
+       "id": "auth",
+       "kind": "idp",
+       "label": "Authentication",
+       "x": 3,
+       "y": 2
       },
       {
-       "label": "Infrastructure and suppliers",
-       "parts": [
-        "Cloud region A and B",
-        "SMS gateway supplier",
-        "Network links"
-       ]
+       "id": "notif",
+       "kind": "api",
+       "label": "Notifications",
+       "x": 5,
+       "y": 2
+      },
+      {
+       "id": "k8s",
+       "kind": "container",
+       "label": "Container cluster",
+       "x": 1,
+       "y": 4
+      },
+      {
+       "id": "db",
+       "kind": "db",
+       "label": "Managed database",
+       "x": 3,
+       "y": 4
+      },
+      {
+       "id": "mq",
+       "kind": "process",
+       "label": "Message queue",
+       "x": 5,
+       "y": 4
+      },
+      {
+       "id": "ra",
+       "kind": "cloud",
+       "label": "Cloud region A",
+       "sub": "Primary",
+       "x": 1,
+       "y": 6
+      },
+      {
+       "id": "rb",
+       "kind": "cloud",
+       "label": "Cloud region B",
+       "sub": "Standby",
+       "x": 3,
+       "y": 6
+      },
+      {
+       "id": "sms",
+       "kind": "tower",
+       "label": "SMS gateway",
+       "sub": "Supplier",
+       "x": 5,
+       "y": 6
       }
-     ]
+     ],
+     "links": [
+      {
+       "a": "svc",
+       "b": "api"
+      },
+      {
+       "a": "svc",
+       "b": "auth"
+      },
+      {
+       "a": "svc",
+       "b": "notif"
+      },
+      {
+       "a": "api",
+       "b": "k8s",
+       "label": "runs on"
+      },
+      {
+       "a": "api",
+       "b": "db",
+       "label": "depends on"
+      },
+      {
+       "a": "auth",
+       "b": "db"
+      },
+      {
+       "a": "notif",
+       "b": "mq"
+      },
+      {
+       "a": "mq",
+       "b": "sms",
+       "label": "supplier"
+      },
+      {
+       "a": "k8s",
+       "b": "ra"
+      },
+      {
+       "a": "db",
+       "b": "ra"
+      },
+      {
+       "a": "db",
+       "b": "rb",
+       "label": "replica",
+       "style": "dashed"
+      }
+     ],
+     "caption": "Relationships, not the list of items, answer impact questions: a fault in the managed database touches both the Payments API and Authentication. Collect only the relationship types that decisions like this need."
     },
     {
      "type": "formula",
@@ -5095,7 +6632,8 @@ TRACK.modules.push({
       "Plan hardware refresh before end-of-support dates, not after failures.",
       "Wipe and certify disposal of devices holding personal data.",
       "Find shadow IT and unmanaged cloud spending through finance and network data.",
-      "Give incident teams the owner and support contract of any failing component in seconds."
+      "Give incident teams the owner and support contract of any failing component in seconds.",
+      "Extend device life and use certified recyclers, giving evidence for sustainability reporting."
      ],
      "title": "Practical wins from asset data"
     },
@@ -5192,6 +6730,17 @@ TRACK.modules.push({
      "prompt": "Which decision in your organisation would most benefit from trustworthy configuration data today? What is the smallest scope that would support it?"
     },
     {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "Asset management tracks cost, contracts, licences and lifecycle; configuration management tracks relationships to services.",
+      "Scope configuration data by the decisions it must support, not by everything that exists.",
+      "Prefer automated discovery and platform APIs over manual record keeping.",
+      "Licence position = owned minus deployed; negative values are audit exposure.",
+      "Retirement closes the loop: certified wiping, reuse and responsible recycling."
+     ]
+    },
+    {
      "type": "quiz",
      "items": [
       {
@@ -5269,31 +6818,83 @@ TRACK.modules.push({
      "text": "Service level management sets clear, business-based targets for service performance so that delivery can be properly assessed, monitored and managed. Its most visible artefact is the **service level agreement (SLA)**, but the real work is the conversation: understanding what customers need, agreeing realistic targets, measuring honestly and improving together. An SLA nobody discusses is just paperwork."
     },
     {
-     "type": "layers",
-     "title": "The agreement chain",
-     "items": [
+     "type": "topology",
+     "title": "The agreement chain behind one service",
+     "nodes": [
       {
-       "label": "Service level agreement (SLA)",
-       "parts": [
-        "Between provider and customer",
-        "Targets for the end-to-end service"
-       ]
+       "id": "cust",
+       "kind": "team",
+       "label": "Customer",
+       "sub": "Business unit",
+       "x": 0,
+       "y": 2
       },
       {
-       "label": "Operational level agreement (OLA)",
-       "parts": [
-        "Between internal teams",
-        "Targets that support the SLA, such as database restore time"
-       ]
+       "id": "prov",
+       "kind": "team",
+       "label": "Service owner",
+       "sub": "Provider",
+       "x": 3,
+       "y": 2
       },
       {
-       "label": "Underpinning contract (UC)",
-       "parts": [
-        "Between provider and supplier",
-        "Legally binding targets that support the SLA, such as 4-hour hardware replacement"
-       ]
+       "id": "sup",
+       "kind": "server",
+       "label": "Supplier",
+       "sub": "4-hour hardware swap",
+       "x": 6,
+       "y": 2
+      },
+      {
+       "id": "dbt",
+       "kind": "db",
+       "label": "Database team",
+       "sub": "Restore within 2 h",
+       "x": 2,
+       "y": 4
+      },
+      {
+       "id": "net",
+       "kind": "router",
+       "label": "Network team",
+       "sub": "Link fault fix 1 h",
+       "x": 4,
+       "y": 4
       }
-     ]
+     ],
+     "links": [
+      {
+       "a": "cust",
+       "b": "prov",
+       "label": "SLA"
+      },
+      {
+       "a": "prov",
+       "b": "sup",
+       "label": "UC (contract)"
+      },
+      {
+       "a": "prov",
+       "b": "dbt",
+       "label": "OLA"
+      },
+      {
+       "a": "prov",
+       "b": "net",
+       "label": "OLA"
+      }
+     ],
+     "zones": [
+      {
+       "label": "Provider organisation",
+       "x": 2,
+       "y": 2,
+       "w": 3,
+       "h": 3,
+       "tone": "accent"
+      }
+     ],
+     "caption": "The SLA promise to the customer is only as strong as the OLAs and contracts beneath it. The example targets are illustrative; each must leave room inside the SLA target."
     },
     {
      "type": "table",
@@ -5368,6 +6969,45 @@ TRACK.modules.push({
        ]
       }
      ]
+    },
+    {
+     "type": "chart",
+     "kind": "line",
+     "title": "The watermelon effect: SLAs green, experience red",
+     "labels": [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun"
+     ],
+     "series": [
+      {
+       "name": "SLA targets met",
+       "values": [
+        97,
+        98,
+        98,
+        99,
+        98,
+        99
+       ]
+      },
+      {
+       "name": "Users rating support as good",
+       "values": [
+        71,
+        66,
+        62,
+        58,
+        55,
+        52
+       ]
+      }
+     ],
+     "unit": "%",
+     "caption": "Illustrative numbers. Operational targets look perfect while users' experience steadily worsens; an XLA would have flagged the second line months earlier."
     },
     {
      "type": "callout",
@@ -5488,6 +7128,17 @@ TRACK.modules.push({
     {
      "type": "reflection",
      "prompt": "Pick one SLA you are responsible for. Would its users recognise the targets as describing their experience? What would you change?"
+    },
+    {
+     "type": "keypoints",
+     "title": "Key takeaways",
+     "items": [
+      "SLAs sit on top of OLAs with internal teams and underpinning contracts with suppliers.",
+      "Write targets about what users experience, using percentiles and agreed service hours.",
+      "XLAs add sentiment, effort and productivity measures to expose green-but-failing services.",
+      "Allowed downtime = agreed time × (1 − target); 99.9% of a 30-day month is about 43 minutes.",
+      "Service reviews start from outcomes and experience, then use operational data to explain them."
+     ]
     },
     {
      "type": "quiz",
